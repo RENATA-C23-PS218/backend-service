@@ -12,14 +12,18 @@ router.post(
 );
 router.post(
   "/verify-reset-password",
-  validation.verifyOTPValidation,
+  validation.verifyOTPResetPasswordValidation,
   controllers.verifyOTPResetPassword
 );
-router.post(
+router.put(
   "/reset-password",
   validation.resetPasswordValidation,
   controllers.resetPassword
 );
-router.post("/resend-verification", controllers.resendOTP);
+router.post(
+  "/resend-verification",
+  validation.resendOTPValidation,
+  controllers.resendOTP
+);
 
 module.exports = router;
