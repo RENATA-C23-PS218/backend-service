@@ -14,14 +14,15 @@ const verifyOTP = async (req, res) => {
     });
 
     if (!user) return response(res, 404, false, "User not found", null);
-    if (user.otp.otp !== otp)
+    if (user.otp[0].otp !== otp)
       return response(res, 400, false, "Incorrect OTP", null);
 
     const date = new Date();
-    if (user.otp.expired.getTime() < date.getTime())
+    if (user.otp[0].expired.getTime() < date.getTime())
       return response(res, 400, false, "Invalid OTP", null);
 
     await User.update({ is_verifed: true }, { where: { id } });
+    await OTP.update({ is_used: true }, { where: { otp } });
 
     const token = generateToken(user);
 
@@ -47,12 +48,14 @@ const verifyOTPResetPassword = async (req, res) => {
     });
 
     if (!user) return response(res, 404, false, "User not found", null);
-    if (user.otp.otp !== otp)
+    if (user.otp[0].otp !== otp)
       return response(res, 400, false, "Incorrect OTP", null);
 
     const date = new Date();
-    if (user.otp.expired.getTime() < date.getTime())
+    if (user.otp[0].expired.getTime() < date.getTime())
       return response(res, 400, false, "Invalid OTP", null);
+
+    await OTP.update({ is_used: true }, { where: { otp } });
 
     return response(res, 200, true, "Verify success", null);
   } catch (err) {

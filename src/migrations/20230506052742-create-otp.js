@@ -6,16 +6,19 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       user_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       otp: {
         type: Sequelize.INTEGER,
       },
       expired: {
         type: Sequelize.DATE,
+      },
+      is_used: {
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,

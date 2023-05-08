@@ -5,7 +5,7 @@ const { responseValidationError } = require("./response");
 const registerValidation = (req, res, next) => {
   const schema = Joi.object({
     email: Joi.string().email().required().label("Email"),
-    password: passwordComplexity().required.label("Password"),
+    password: passwordComplexity().required().label("Password"),
     confirmPassword: Joi.string().required().label("Password Confirmation"),
   });
 
@@ -29,6 +29,19 @@ const loginValidation = (req, res, next) => {
 
 const verifyOTPValidation = (req, res, next) => {
   const schema = Joi.object({
+    id: Joi.string().required().label("Id"),
+    otp: Joi.number().required().label("OTP"),
+  });
+
+  const { error } = schema.validate(req.body);
+  if (error) return responseValidationError(res, error);
+
+  next();
+};
+
+const verifyOTPResetPasswordValidation = (req, res, next) => {
+  const schema = Joi.object({
+    email: Joi.string().email().required().label("Email"),
     otp: Joi.number().required().label("OTP"),
   });
 
@@ -43,7 +56,7 @@ const forgotPasswordValidation = (req, res, next) => {
     email: Joi.string().email().required().label("Email"),
   });
 
-  const { error } = schema.validate(req.body, options);
+  const { error } = schema.validate(req.body);
   if (error) return responseValidationError(res, error);
 
   next();
@@ -51,8 +64,20 @@ const forgotPasswordValidation = (req, res, next) => {
 
 const resetPasswordValidation = (req, res, next) => {
   const schema = Joi.object({
+    email: Joi.string().email().required().label("Email"),
     password: passwordComplexity().required().label("Password"),
     confirmPassword: Joi.string().required().label("Password Confirmation"),
+  });
+
+  const { error } = schema.validate(req.body);
+  if (error) return responseValidationError(res, error);
+
+  next();
+};
+
+const resendOTPValidation = (req, res, next) => {
+  const schema = Joi.object({
+    id: Joi.string().required().label("Id"),
   });
 
   const { error } = schema.validate(req.body);
@@ -65,6 +90,8 @@ module.exports = {
   registerValidation,
   loginValidation,
   verifyOTPValidation,
+  verifyOTPResetPasswordValidation,
   forgotPasswordValidation,
   resetPasswordValidation,
+  resendOTPValidation,
 };

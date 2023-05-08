@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       user_id: DataTypes.INTEGER,
       otp: DataTypes.INTEGER,
       expired: DataTypes.DATE,
+      is_used: DataTypes.BOOLEAN,
     },
     {
       sequelize,
