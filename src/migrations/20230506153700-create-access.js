@@ -6,10 +6,10 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       role_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       read: {
         type: Sequelize.BOOLEAN,
