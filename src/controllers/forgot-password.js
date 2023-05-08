@@ -1,5 +1,5 @@
 const { User, OTP } = require("../models");
-const nanoid = require("nanoid");
+const { nanoid } = require("nanoid");
 const sendEmail = require("../config/nodemailer");
 const { response } = require("../utils/response");
 const generateOTP = require("../utils/otp");
@@ -11,11 +11,17 @@ const forgotPassword = async (req, res) => {
     const user = await User.findOne({ where: { email } });
     if (!user) return response(res, 404, false, "User not found", null);
 
-    const otpId = await nanoid(10);
-    const otp = generateOTP;
+    const otpId = nanoid(10);
+    const otp = generateOTP();
     const date = new Date();
-    const expired = date.setMinutes(10);
-    await OTP.create({ id: otpId, user_id: user.id, otp, expired });
+    const expired = date.setMinutes(date.getMinutes() + 10);
+    await OTP.create({
+      id: otpId,
+      user_id: user.id,
+      otp,
+      expired,
+      is_used: false,
+    });
 
     const html = `<p>${otp}</p>`;
     await sendEmail(user.email, "Reset Password - Renata", html);
