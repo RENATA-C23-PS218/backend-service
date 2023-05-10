@@ -1,9 +1,9 @@
 const { nanoid } = require("nanoid");
 const bcrypt = require("bcrypt");
-const { User, Role, OTP, Profile } = require("../models");
-const { response } = require("../utils/response");
-const sendEmail = require("../config/nodemailer");
-const generateOTP = require("../utils/otp");
+const { User, Role, OTP, Profile } = require("../../models");
+const { response } = require("../../utils/response");
+const sendEmail = require("../../config/nodemailer");
+const generateOTP = require("../../utils/otp");
 
 const register = async (req, res) => {
   try {

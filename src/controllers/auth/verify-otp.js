@@ -1,6 +1,6 @@
-const { User, OTP } = require("../models");
-const { response } = require("../utils/response");
-const generateToken = require("../utils/jwt");
+const { User, OTP } = require("../../models");
+const { response } = require("../../utils/response");
+const generateToken = require("../../utils/jwt");
 
 const verifyOTP = async (req, res) => {
   try {

@@ -1,7 +1,7 @@
-const { User } = require("../models");
+const { User } = require("../../models");
 const bcrypt = require("bcrypt");
-const { response } = require("../utils/response");
-const generateToken = require("../utils/jwt");
+const { response } = require("../../utils/response");
+const generateToken = require("../../utils/jwt");
 
 const login = async (req, res) => {
   try {

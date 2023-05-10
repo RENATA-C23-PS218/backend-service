@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
-const { responseValidationError } = require("./response");
+const { responseValidationError } = require("../response");
 
 const registerValidation = (req, res, next) => {
   const schema = Joi.object({
