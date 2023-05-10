@@ -1,6 +1,6 @@
 const { nanoid } = require("nanoid");
 const bcrypt = require("bcrypt");
-const { User, Role, OTP } = require("../models");
+const { User, Role, OTP, Profile } = require("../models");
 const { response } = require("../utils/response");
 const sendEmail = require("../config/nodemailer");
 const generateOTP = require("../utils/otp");
@@ -26,6 +26,17 @@ const register = async (req, res) => {
       account_type: "basic",
       is_active: true,
       is_verifed: false,
+    });
+
+    // automatically empty profile for user
+    const profile_id = nanoid(10);
+    await Profile.create({
+      id: profile_id,
+      user_id: user.id,
+      first_name: "",
+      last_name: "",
+      phone: "",
+      address: "",
     });
 
     const otpId = nanoid(10);
