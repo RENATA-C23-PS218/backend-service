@@ -7,7 +7,7 @@ router.post(
   "/profile",
   middlewares.restrict,
   validation.createUserProfileValidation,
-  controllers.create
+  controllers.update
 );
 router.get("/profile", middlewares.restrict, controllers.get);
 

@@ -1,7 +1,7 @@
-const create = require("./update");
+const update = require("./update");
 const get = require("./get");
 
 module.exports = {
-  create,
+  update,
   get,
 };
