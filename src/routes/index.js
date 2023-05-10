@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const controllers = require("../controllers");
 const validation = require("../utils/validation");
+const profile = require("./profile");
 
 router.post("/register", validation.registerValidation, controllers.register);
 router.post("/verify", validation.verifyOTPValidation, controllers.verifyOTP);
@@ -26,4 +27,5 @@ router.post(
   controllers.resendOTP
 );
 
+router.use(profile);
 module.exports = router;
