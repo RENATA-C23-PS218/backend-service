@@ -1,8 +1,8 @@
-const { User, OTP } = require("../models");
+const { User, OTP } = require("../../models");
 const { nanoid } = require("nanoid");
-const sendEmail = require("../config/nodemailer");
-const { response } = require("../utils/response");
-const generateOTP = require("../utils/otp");
+const sendEmail = require("../../config/nodemailer");
+const { response } = require("../../utils/response");
+const generateOTP = require("../../utils/otp");
 
 const forgotPassword = async (req, res) => {
   try {

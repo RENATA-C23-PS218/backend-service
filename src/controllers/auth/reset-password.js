@@ -1,6 +1,6 @@
-const { User, OTP } = require("../models");
+const { User, OTP } = require("../../models");
 const bcrypt = require("bcrypt");
-const { response } = require("../utils/response");
+const { response } = require("../../utils/response");
 
 const resetPassword = async (req, res) => {
   try {

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const controllers = require("../../controllers/profile");
-const validation = require("../../utils/profile/validation");
+const validation = require("../../utils/validation/profile-validation");
 const middlewares = require("../../middlewares/restrict");
 
 router.post(
