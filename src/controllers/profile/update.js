@@ -1,7 +1,7 @@
 const { Profile, User } = require("../../models");
 const { response } = require("../../utils/response");
 
-const create = async (req, res) => {
+const update = async (req, res) => {
   try {
     const { id } = req.user;
     const { first_name, last_name, phone, address } = req.body;
@@ -45,4 +45,4 @@ const create = async (req, res) => {
   }
 };
 
-module.exports = create;
+module.exports = update;
