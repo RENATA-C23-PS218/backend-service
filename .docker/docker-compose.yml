@@ -1,29 +1,29 @@
 version: 3-9
 
 services:
-  renata-app-service:
-    image: backend-service-app:latest 
-    restart: on-failure
-    depends_on:
-      - renata-db-service
-    environment:
-      NODE_ENV: $NODE_ENV
-      PORT: $PORT
-    ports:
-      - "$PORT:$PORT"
-
   renata-db-service:
-    image: postgres:11
+    image: postgres:15
     ports:
-      - "$DB_PORT:5432"
+      - "5444:5432"
     environment:
-      POSTGRES_USER: $DB_USERNAME
-      POSTGRES_PASSWORD: $DB_PASSWORD
-      POSTGRES_DB: $DB_NAME
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: $DB_NAME_DEV
     volumes:
       - db:/var/lib/postgresql/data
 
+  renata-app-service:
+    image: renata-app:latest
+    restart: on-failure
+    depends_on:
+      - renata-db-service
+    env_file: ../.env
+    ports:
+      - "$PORT:$PORT"
+    volumes:
+      - ./:/home/node/app
+
 volumes:
-  db:
+  db: 
     driver: local
  
