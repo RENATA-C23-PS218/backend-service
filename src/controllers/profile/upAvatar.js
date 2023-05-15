@@ -1,7 +1,7 @@
 const { Storage } = require("@google-cloud/storage");
 const { Profile } = require("../../models");
 const { response } = require("../../utils/response");
-const secretKey = require("../../../.secret/secretkey.json");
+const secretKey = require(process.env.GOOGLE_SERVICE_UP_AVATAR_KEY);
 const { nanoid } = require("nanoid");
 
 const storage = new Storage({
