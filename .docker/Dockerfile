@@ -9,8 +9,6 @@ WORKDIR /usr/src/app
 COPY ./package*.json ./
 
 RUN npm install
-# RUN sequelize db:migrate
-# RUN sequelize db:seed:all
 COPY . .
-EXPOSE 3000
+EXPOSE $PORT
 CMD ["npm", "start"]
