@@ -33,7 +33,6 @@ jobs:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
       - id: "setup"
-				name: Setup Cloud SDK
         uses: "google-github-actions/setup-gcloud@v1"
 
       - name: Docker configuration
