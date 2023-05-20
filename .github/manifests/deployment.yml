@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+	name: renata-backend-api
+spec:
+	replicas: 1
+	selector:
+		matchLabels:
+			app: renata-backend-api
+			env: dev
+	template:	
+		metadata:
+			labels:	
+				app: renata-backend-api
+				env: dev
+		spec:
+			containers:
+				- name: renata-backend-api
+				  image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+					ports:
+						- containerPort: 3000
