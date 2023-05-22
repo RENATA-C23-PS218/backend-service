@@ -17,5 +17,6 @@ spec:
       containers:
       - name: renata-backend-api
         image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+        imagePullPolicy: always
         ports:
         - containerPort: 3000
