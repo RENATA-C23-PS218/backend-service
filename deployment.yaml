@@ -20,3 +20,18 @@ spec:
         imagePullPolicy: always
         ports:
         - containerPort: 3000
+
+---
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: renata-backend-api
+spec:
+  maxReplicas: 5
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: renata-backend-apij
+  targetCPUUtilizationPercentage: 80
