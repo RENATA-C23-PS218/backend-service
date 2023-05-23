@@ -35,3 +35,18 @@ spec:
     kind: Deployment
     name: renata-backend-api
   targetCPUUtilizationPercentage: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: renata-backend-api-service
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
+  selector:
+    app: renata-backend-api
