@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: renata-backend-api
-        image: $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+        image: GAR_LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:GITHUB_SHA
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
@@ -33,5 +33,5 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: renata-backend-apij
+    name: renata-backend-api
   targetCPUUtilizationPercentage: 80

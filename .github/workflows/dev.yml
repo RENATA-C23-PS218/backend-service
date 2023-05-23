@@ -67,8 +67,12 @@ jobs:
 
       - name: Deploy
         run: |-
-          # replacing the image name in the k8s template
-          ./kustomize edit set image LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+          gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE --project $PROJECT_ID
+          sed -i -e 's/GAR_LOCATION/'"$GAR_LOCATION"'/' deployment.yaml
+          sed -i -e 's/PROJECT_ID/'"$PROJECT_ID"'/' deployment.yaml
+          sed -i -e 's/REPOSITORY/'"$REPOSITORY"'/' deployment.yaml
+          sed -i -e 's/IMAGE/'"$IMAGE"'/' deployment.yaml
+          sed -i -e 's/GITHUB_SHA/'"$GITHUB_SHA"'/' deployment.yaml
           ./kustomize build . | kubectl apply -f -
           kubectl rollout status deployment/$DEPLOYMENT_NAME
           kubectl get services -o wide
