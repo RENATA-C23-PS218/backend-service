@@ -1,12 +1,11 @@
 const { Storage } = require("@google-cloud/storage");
 const { Profile } = require("../../models");
 const { response } = require("../../utils/response");
-const secretKey = require("../../../.secret/secretkey.json");
 const { nanoid } = require("nanoid");
 
 const storage = new Storage({
   projectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
-  credentials: secretKey,
+  credentials: JSON.parse(process.env.GOOGLE_SERVICE_UP_AVATAR_KEY),
 });
 
 const bucket = storage.bucket(process.env.GOOGLE_CLOUD_STORAGE_BUCKET);
