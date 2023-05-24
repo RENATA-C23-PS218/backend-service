@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: renata-backend-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: renata-backend-api
+      env: dev
+  template:
+    metadata:
+      labels:
+        app: renata-backend-api
+        env: dev
+    spec:
+      containers:
+      - name: renata-backend-api-service
+        image: GAR_LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
