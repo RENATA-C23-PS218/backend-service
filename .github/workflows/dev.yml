@@ -12,6 +12,22 @@ env:
   DEPLOYMENT_NAME: ${{ secrets.DEPLOYMENT_NAME }}
   REPOSITORY: ${{ secrets.REPOSITORY}}
   IMAGE: ${{ secrets.IMAGE }}
+  DB_USERNAME: ${{ secrets.DB_USERNAME }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  DB_NAME: ${{ secrets.DB_NAME }}
+  DB_HOST: ${{ secrets.DB_HOST }}
+  DB_PORT: ${{ secrets.DB_PORT }}
+  DB_DIALECT: ${{ secrets.DB_DIALECT }}
+  GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID}}
+  GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET}}
+  GOOGLE_REDIRECT_URI: ${{ secrets.GOOGLE_REDIRECT_URI}}
+  GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN}}
+  GOOGLE_EMAIL: ${{ secrets.GOOGLE_EMAIL}}
+  GOOGLE_CLOUD_STORAGE_BUCKET: ${{ secrets.GOOGLE_CLOUD_STORAGE_BUCKET}}
+  GOOGLE_CLOUD_PROJECT_ID: ${{ secrets.GOOGLE_CLOUD_PROJECT_ID}}
+  GOOGLE_SERVICE_UP_AVATAR_KEY: ${{ secrets.GOOGLE_SERVICE_UP_AVATAR_KEY}}
+  GOOGLE_SERVICE_UP_SOIL_KEY: ${{ secrets.GOOGLE_SERVICE_UP_SOIL_KEY}}
+  JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY}}
 
 jobs:
   setup-build-publish-deploy:
@@ -54,9 +70,48 @@ jobs:
             --build-arg GITHUB_REF="$GITHUB_REF" \
             .
 
+      - name: Tag Image with Latest
+        run: |-
+          docker tag "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA" \
+            "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
+
       - name: Publish
         run: |-
           docker push "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA"
+          docker push "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
+
+      - name: Set up Kustomize
+        run: |-
+          curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+          chmod u+x ./kustomize
+
+      - name: Configure Environment Variables in Pods
+        run: |-
+          sed -i -e 's+GAR_LOCATION+'"$GAR_LOCATION"'+' base/pods.yaml
+          sed -i -e 's+REPOSITORY+'"$REPOSITORY"'+' base/pods.yaml
+          sed -i -e 's+IMAGE+'"$IMAGE"'+' base/pods.yaml
+          sed -i -e 's+DB_USERNAME_DEV+'"$DB_USERNAME_DEV"'+' base/pods.yaml
+          sed -i -e 's+DB_PASSWORD_DEV+'"$DB_PASSWORD_DEV"'+' base/pods.yaml
+          sed -i -e 's+DB_NAME_DEV+'"$DB_NAME_DEV"'+' base/pods.yaml
+          sed -i -e 's+DB_HOST_DEV+'"$DB_HOST_DEV"'+' base/pods.yaml
+          sed -i -e 's+DB_PORT_DEV+'"$DB_PORT_DEV"'+' base/pods.yaml
+          sed -i -e 's+DB_DIALECT_DEV+'"$DB_DIALECT_DEV"'+' base/pods.yaml
+          sed -i -e 's+ENV_GOOGLE_CLIENT_ID+'"$GOOGLE_CLIENT_ID"'+' base/pods.yaml
+          sed -i -e 's+ENV_GOOGLE_CLIENT_SECRET+'"$GOOGLE_CLIENT_SECRET"'+' base/pods.yaml
+          sed -i -e 's+ENV_GOOGLE_REDIRECT_URI+'"$GOOGLE_REDIRECT_URI"'+' base/pods.yaml
+          sed -i -e 's+ENV_GOOGLE_REFRESH_TOKEN+'"$GOOGLE_REFRESH_TOKEN"'+' base/pods.yaml
+          sed -i -e 's+ENV_GOOGLE_EMAIL+'"$GOOGLE_EMAIL"'+' base/pods.yaml
+          sed -i -e 's+ENV_GOOGLE_CLOUD_STORAGE_BUCKET+'"$GOOGLE_CLOUD_STORAGE_BUCKET"'+' base/pods.yaml
+          sed -i -e 's+ENV_GOOGLE_CLOUD_PROJECT_ID+'"$GOOGLE_CLOUD_PROJECT_ID"'+' base/pods.yaml
+          sed -i -e 's+ENV_GOOGLE_SERVICE_UP_AVATAR_KEY+'"$GOOGLE_SERVICE_UP_AVATAR_KEY"'+' base/pods.yaml
+          sed -i -e 's+ENV_JWT_SECRET_KEY+'"$JWT_SECRET_KEY"'+' base/pods.yaml
+
+      - name: Configure Environment Variables in Deployment
+        run: |-
+          sed -i -e 's+GAR_LOCATION+'"$GAR_LOCATION"'+' base/deployment.yaml
+          sed -i -e 's+PROJECT_ID+'"$PROJECT_ID"'+' base/deployment.yaml
+          sed -i -e 's+REPOSITORY+'"$REPOSITORY"'+' base/deployment.yaml
+          sed -i -e 's+IMAGE+'"$IMAGE"'+' base/deployment.yaml
 
       - name: Set up Kustomize
         run: |-
@@ -65,8 +120,6 @@ jobs:
 
       - name: Deploy
         run: |-
-          # replacing the image name in the k8s template
-          ./kustomize edit set image LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
-          ./kustomize build . | kubectl apply -f -
+          ./kustomize build base/ | kubectl apply -f -
           kubectl rollout status deployment/$DEPLOYMENT_NAME
           kubectl get services -o wide
