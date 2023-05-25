@@ -6,5 +6,5 @@ kind: Kustomization
 resources:
 - service.yaml
 - deployment.yaml
-- pods.yaml
 - podScaler.yaml
+- configMap.yaml
