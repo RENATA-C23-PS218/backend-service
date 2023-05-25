@@ -1,7 +1,7 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: renata-backend-api
+  name: renata-backend-api-hpa
 spec:
   maxReplicas: 5
   minReplicas: 1
