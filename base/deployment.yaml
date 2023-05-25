@@ -7,16 +7,50 @@ spec:
   selector:
     matchLabels:
       app: renata-backend-api
-      env: dev
   template:
     metadata:
       labels:
         app: renata-backend-api
-        env: dev
     spec:
       containers:
       - name: renata-backend-api-service
         image: GAR_LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000
+        - containerPort: PORT
+        env:
+        - name: NODE_ENV
+          value: "development"
+        - name: DB_USERNAME
+          value: "DB_USERNAME_DEV"
+        - name: DB_PASSWORD
+          value: "DB_PASSWORD_DEV"
+        - name: DB_NAME
+          value: "DB_NAME_DEV"
+        - name: DB_HOST
+          value: "DB_HOST_DEV"
+        - name: DB_PORT
+          value: "DB_PORT_DEV"
+        - name: DB_DIALECT
+          value: "DB_DIALECT_DEV"
+        - name: GOOGLE_CLIENT_ID
+          value: "ENV_GOOGLE_CLIENT_ID"
+        - name: GOOGLE_CLIENT_SECRET
+          value: "ENV_GOOGLE_CLIENT_SECRET"
+        - name: GOOGLE_REDIRECT_URI
+          value: "ENV_GOOGLE_REDIRECT_URI"
+        - name: GOOGLE_REFRESH_TOKEN
+          value: "ENV_GOOGLE_REFRESH_TOKEN"
+        - name: GOOGLE_EMAIL
+          value: "ENV_GOOGLE_EMAIL"
+        - name: GOOGLE_CLOUD_STORAGE_BUCKET
+          value: "ENV_GOOGLE_CLOUD_STORAGE_BUCKET"
+        - name: GOOGLE_CLOUD_PROJECT_ID
+          value: "ENV_GOOGLE_CLOUD_PROJECT_ID"
+        - name: JWT_SECRET_KEY
+          value: "ENV_JWT_SECRET_KEY"
+        - name: GOOGLE_SERVICE_UP_AVATAR_KEY
+          valueFrom:
+            configMapKeyRef:
+              name: service-account-key
+              key: key.json

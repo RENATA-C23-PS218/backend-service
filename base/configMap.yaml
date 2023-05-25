@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-account-key
+data:
+  key.json: |
+    ENV_GOOGLE_SERVICE_UP_AVATAR_KEY
