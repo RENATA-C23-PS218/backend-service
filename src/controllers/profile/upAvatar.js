@@ -3,9 +3,13 @@ const { Profile } = require("../../models");
 const { response } = require("../../utils/response");
 const { nanoid } = require("nanoid");
 
+const encodedServiceAccountKey = process.env.GOOGLE_SERVICE_UP_AVATAR_KEY;
+const buff = Buffer.from(encodedServiceAccountKey, "base64");
+const serviceAccountKey = JSON.parse(buff.toString());
+
 const storage = new Storage({
   projectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
-  credentials: JSON.parse(process.env.GOOGLE_SERVICE_UP_AVATAR_KEY),
+  credentials: serviceAccountKey,
 });
 
 const bucket = storage.bucket(process.env.GOOGLE_CLOUD_STORAGE_BUCKET);
