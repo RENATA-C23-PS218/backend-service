@@ -33,17 +33,5 @@ data:
     ENV_DB_PASSWORD_DEV
   db_username_dev: |
     ENV_DB_USERNAME_DEV
-  db_dialect_prod: |
-    ENV_DB_DIALECT_PROD
-  db_port_prod: |
-    ENV_DB_PORT_PROD
-  db_host_prod: |
-    ENV_DB_HOST_PROD
-  db_name_prod: |
-    ENV_DB_NAME_PROD
-  db_password_prod: |
-    ENV_DB_PASSWORD_PROD
-  db_username_prod: |
-    ENV_DB_USERNAME_PROD
   port: |
     ENV_PORT
