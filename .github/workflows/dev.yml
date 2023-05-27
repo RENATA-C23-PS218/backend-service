@@ -87,13 +87,6 @@ jobs:
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
           chmod u+x ./kustomize
 
-      - name: Configure Container Port and Image in Deployment
-        run: |-
-          sed -i -e 's~GAR_LOCATION~'"$GAR_LOCATION"'~g' base/deployment.yaml
-          sed -i -e 's~REPOSITORY~'"$REPOSITORY"'~g' base/deployment.yaml
-          sed -i -e 's~IMAGE~'"$IMAGE"'~g' base/deployment.yaml
-          sed -i -e 's~CONTAINER_PORT~'"$PORT"'~g' base/deployment.yaml
-
       - name: Configure Database in Config Map
         run: |-
           sed -i -e 's~ENV_DB_USERNAME_DEV~'"$DB_USERNAME"'~g' base/configMap.yaml
@@ -121,14 +114,15 @@ jobs:
         run: |-
           sed -i -e 's~TARGET_PORT~'"$PORT"'~g' base/service.yaml
 
+      - name: Configure Container Port and Image in Deployment
+        run: |-
+          sed -i -e 's~GAR_LOCATION~'"$GAR_LOCATION"'~g' base/deployment.yaml
+          sed -i -e 's~REPOSITORY~'"$REPOSITORY"'~g' base/deployment.yaml
+          sed -i -e 's~IMAGE~'"$IMAGE"'~g' base/deployment.yaml
+          sed -i -e 's~CONTAINER_PORT~'"$PORT"'~g' base/deployment.yaml
+
       - name: Deploy
         run: |-
           ./kustomize build base/ | kubectl apply -f -
           kubectl rollout status deployment/renata-backend-api
           kubectl get services -o wide
-
-        # TODO Use DNS
-      - name: Get Service External IP
-        id: get-service-external-ip
-        run: |-
-          echo ::set-output name=service-external-ip::$(kubectl get service renata-backend-api-service -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
