@@ -5,7 +5,7 @@ const scanHistory = async (req, res) => {
   try {
     const user = req.user;
 
-    const history = await Scan.findALl({
+    const histories = await Scan.findAll({
       where: { user_id: user.id },
       include: [
         {
@@ -14,7 +14,7 @@ const scanHistory = async (req, res) => {
         },
       ],
     });
-    if (!history)
+    if (!histories)
       return response(
         res,
         404,
@@ -23,10 +23,18 @@ const scanHistory = async (req, res) => {
         null
       );
 
+    const scanHistories = [];
+    for (const history of histories) {
+      const data = {
+        soil_type: history.soil.name,
+        date_scan: history.createdAt,
+      };
+      scanHistories.push(data);
+    }
+
     return response(res, 200, true, "Success get history!", {
       user_id: user.id,
-      soil_type: history.soil.name,
-      date_scan: history.createdAt,
+      scanHistories,
     });
   } catch (err) {
     return response(res, err.status || 500, false, err.message, null);

@@ -7,7 +7,9 @@ const plantRecommendation = async (req, res) => {
     const user = req.user;
     const { soilType } = req.body;
 
-    const soil = await Soil.findOne({ where: { name: soilType } });
+    const soil = await Soil.findOne({
+      where: { name: soilType.charAt(0).toUpperCase() + soilType.slice(1) },
+    });
     if (!soil) return response(res, 404, false, "Soil Type not found!", null);
 
     const plants = await Plant.findAll({ where: { soil_id: soil.id } });
