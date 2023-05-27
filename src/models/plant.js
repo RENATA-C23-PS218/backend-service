@@ -19,7 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       soil_id: DataTypes.STRING,
       name: DataTypes.STRING,
-      description: DataTypes.STRING,
     },
     {
       sequelize,
