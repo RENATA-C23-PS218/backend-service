@@ -1,7 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: service-account-key
+  name: renata-backend-api-configmap
 data:
   key.json: |
     ENV_GOOGLE_SERVICE_UP_AVATAR_KEY
+  jwt_secret_key: |
+    ENV_JWT_SECRET_KEY

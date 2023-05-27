@@ -48,9 +48,12 @@ spec:
         - name: GOOGLE_CLOUD_PROJECT_ID
           value: "ENV_GOOGLE_CLOUD_PROJECT_ID"
         - name: JWT_SECRET_KEY
-          value: "ENV_JWT_SECRET_KEY"
+          valueFrom:
+            configMapKeyRef:
+              name: renata-backend-api-configmap
+              key: jwt_secret_key
         - name: GOOGLE_SERVICE_UP_AVATAR_KEY
           valueFrom:
             configMapKeyRef:
-              name: service-account-key
+              name: renata-backend-api-configmap
               key: key.json

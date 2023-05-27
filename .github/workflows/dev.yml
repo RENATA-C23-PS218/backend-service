@@ -107,7 +107,6 @@ jobs:
           sed -i -e 's~ENV_GOOGLE_EMAIL~'"$GOOGLE_EMAIL"'~g' base/deployment.yaml
           sed -i -e 's~ENV_GOOGLE_CLOUD_STORAGE_BUCKET~'"$GOOGLE_CLOUD_STORAGE_BUCKET"'~g' base/deployment.yaml
           sed -i -e 's~ENV_GOOGLE_CLOUD_PROJECT_ID~'"$GOOGLE_CLOUD_PROJECT_ID"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_JWT_SECRET_KEY~'"$JWT_SECRET_KEY"'~g' base/deployment.yaml
 
       - name: Configure Environment Variables in Service
         run: |-
@@ -116,6 +115,7 @@ jobs:
       - name: Configure Environment Variables in Config Map
         run: |-
           sed -i -e 's~ENV_GOOGLE_SERVICE_UP_AVATAR_KEY~'"$GOOGLE_SERVICE_UP_AVATAR_KEY"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_JWT_SECRET_KEY~'"$JWT_SECRET_KEY"'~g' base/configMap.yaml
 
       - name: Deploy
         run: |-
