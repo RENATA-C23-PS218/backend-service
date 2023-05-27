@@ -87,16 +87,21 @@ jobs:
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
           chmod u+x ./kustomize
 
-      - name: Configure Container Port in Deployment
+      - name: Configure Container Port and Image in Deployment
         run: |-
           sed -i -e 's~GAR_LOCATION~'"$GAR_LOCATION"'~g' base/deployment.yaml
           sed -i -e 's~REPOSITORY~'"$REPOSITORY"'~g' base/deployment.yaml
           sed -i -e 's~IMAGE~'"$IMAGE"'~g' base/deployment.yaml
           sed -i -e 's~CONTAINER_PORT~'"$PORT"'~g' base/deployment.yaml
 
-      - name: Configure Target Port in Service
+      - name: Configure Database in Config Map
         run: |-
-          sed -i -e 's~TARGET_PORT~'"$PORT"'~g' base/service.yaml
+          sed -i -e 's~ENV_DB_USERNAME_DEV~'"$DB_USERNAME"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_DB_PASSWORD_DEV~'"$DB_PASSWORD"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_DB_NAME_DEV~'"$DB_NAME"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_DB_HOST_DEV~'"$DB_HOST"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_DB_PORT_DEV~'"$DB_PORT"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_DB_DIALECT_DEV~'"$DB_DIALECT"'~g' base/configMap.yaml
 
       - name: Configure Environment Variables in Config Map
         run: |-
@@ -107,16 +112,14 @@ jobs:
           sed -i -e 's~ENV_GOOGLE_CLOUD_PROJECT_ID~'"$GOOGLE_CLOUD_PROJECT_ID"'~g' base/configMap.yaml
           sed -i -e 's~ENV_PORT~'"$PORT"'~g' base/configMap.yaml
           sed -i -e 's~PROJECT_ID~'"$PROJECT_ID"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_USERNAME_DEV~'"$DB_USERNAME_DEV"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_PASSWORD_DEV~'"$DB_PASSWORD_DEV"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_NAME_DEV~'"$DB_NAME_DEV"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_HOST_DEV~'"$DB_HOST_DEV"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_PORT_DEV~'"$DB_PORT_DEV"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_DIALECT_DEV~'"$DB_DIALECT_DEV"'~g' base/configMap.yaml
           sed -i -e 's~ENV_GOOGLE_CLIENT_ID~'"$GOOGLE_CLIENT_ID"'~g' base/configMap.yaml
           sed -i -e 's~ENV_GOOGLE_CLIENT_SECRET~'"$GOOGLE_CLIENT_SECRET"'~g' base/configMap.yaml
           sed -i -e 's~ENV_GOOGLE_REDIRECT_URI~'"$GOOGLE_REDIRECT_URI"'~g' base/configMap.yaml
           sed -i -e 's~ENV_GOOGLE_REFRESH_TOKEN~'"$GOOGLE_REFRESH_TOKEN"'~g' base/configMap.yaml
+
+      - name: Configure Target Port in Service
+        run: |-
+          sed -i -e 's~TARGET_PORT~'"$PORT"'~g' base/service.yaml
 
       - name: Deploy
         run: |-
