@@ -23,6 +23,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "user_id",
         as: "profile",
       });
+
+      User.hasMany(models.Scan, {
+        foreignKey: "user_id",
+        as: "scan",
+      });
     }
   }
   User.init(
