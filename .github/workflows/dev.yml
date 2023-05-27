@@ -27,6 +27,7 @@ env:
   GOOGLE_CLOUD_PROJECT_ID: ${{ secrets.GOOGLE_CLOUD_PROJECT_ID}}
   GOOGLE_SERVICE_UP_AVATAR_KEY: ${{ secrets.GOOGLE_SERVICE_UP_AVATAR_KEY}}
   JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY}}
+  PORT: ${{ secrets.PORT}}
 
 jobs:
   setup-build-publish-deploy:
