@@ -87,28 +87,11 @@ jobs:
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
           chmod u+x ./kustomize
 
-      - name: Configure Environment Variables in Deployment
+      - name: Configure Container Port in Deployment
         run: |-
           sed -i -e 's~PORT~'"$PORT"'~g' base/deployment.yaml
-          sed -i -e 's~PROJECT_ID~'"$PROJECT_ID"'~g' base/deployment.yaml
-          sed -i -e 's~GAR_LOCATION~'"$GAR_LOCATION"'~g' base/deployment.yaml
-          sed -i -e 's~REPOSITORY~'"$REPOSITORY"'~g' base/deployment.yaml
-          sed -i -e 's~IMAGE~'"$IMAGE"'~g' base/deployment.yaml
-          sed -i -e 's~DB_USERNAME_DEV~'"$DB_USERNAME_DEV"'~g' base/deployment.yaml
-          sed -i -e 's~DB_PASSWORD_DEV~'"$DB_PASSWORD_DEV"'~g' base/deployment.yaml
-          sed -i -e 's~DB_NAME_DEV~'"$DB_NAME_DEV"'~g' base/deployment.yaml
-          sed -i -e 's~DB_HOST_DEV~'"$DB_HOST_DEV"'~g' base/deployment.yaml
-          sed -i -e 's~DB_PORT_DEV~'"$DB_PORT_DEV"'~g' base/deployment.yaml
-          sed -i -e 's~DB_DIALECT_DEV~'"$DB_DIALECT_DEV"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GOOGLE_CLIENT_ID~'"$GOOGLE_CLIENT_ID"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GOOGLE_CLIENT_SECRET~'"$GOOGLE_CLIENT_SECRET"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GOOGLE_REDIRECT_URI~'"$GOOGLE_REDIRECT_URI"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GOOGLE_REFRESH_TOKEN~'"$GOOGLE_REFRESH_TOKEN"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GOOGLE_EMAIL~'"$GOOGLE_EMAIL"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GOOGLE_CLOUD_STORAGE_BUCKET~'"$GOOGLE_CLOUD_STORAGE_BUCKET"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GOOGLE_CLOUD_PROJECT_ID~'"$GOOGLE_CLOUD_PROJECT_ID"'~g' base/deployment.yaml
 
-      - name: Configure Environment Variables in Service
+      - name: Configure Target Port in Service
         run: |-
           sed -i -e 's~PORT~'"$PORT"'~g' base/service.yaml
 
@@ -116,9 +99,33 @@ jobs:
         run: |-
           sed -i -e 's~ENV_GOOGLE_SERVICE_UP_AVATAR_KEY~'"$GOOGLE_SERVICE_UP_AVATAR_KEY"'~g' base/configMap.yaml
           sed -i -e 's~ENV_JWT_SECRET_KEY~'"$JWT_SECRET_KEY"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_GOOGLE_EMAIL~'"$GOOGLE_EMAIL"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_GOOGLE_CLOUD_STORAGE_BUCKET~'"$GOOGLE_CLOUD_STORAGE_BUCKET"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_GOOGLE_CLOUD_PROJECT_ID~'"$GOOGLE_CLOUD_PROJECT_ID"'~g' base/configMap.yaml
+          sed -i -e 's~PORT~'"$PORT"'~g' base/configMap.yaml
+          sed -i -e 's~PROJECT_ID~'"$PROJECT_ID"'~g' base/configMap.yaml
+          sed -i -e 's~GAR_LOCATION~'"$GAR_LOCATION"'~g' base/configMap.yaml
+          sed -i -e 's~REPOSITORY~'"$REPOSITORY"'~g' base/configMap.yaml
+          sed -i -e 's~IMAGE~'"$IMAGE"'~g' base/configMap.yaml
+          sed -i -e 's~DB_USERNAME_DEV~'"$DB_USERNAME_DEV"'~g' base/configMap.yaml
+          sed -i -e 's~DB_PASSWORD_DEV~'"$DB_PASSWORD_DEV"'~g' base/configMap.yaml
+          sed -i -e 's~DB_NAME_DEV~'"$DB_NAME_DEV"'~g' base/configMap.yaml
+          sed -i -e 's~DB_HOST_DEV~'"$DB_HOST_DEV"'~g' base/configMap.yaml
+          sed -i -e 's~DB_PORT_DEV~'"$DB_PORT_DEV"'~g' base/configMap.yaml
+          sed -i -e 's~DB_DIALECT_DEV~'"$DB_DIALECT_DEV"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_GOOGLE_CLIENT_ID~'"$GOOGLE_CLIENT_ID"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_GOOGLE_CLIENT_SECRET~'"$GOOGLE_CLIENT_SECRET"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_GOOGLE_REDIRECT_URI~'"$GOOGLE_REDIRECT_URI"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_GOOGLE_REFRESH_TOKEN~'"$GOOGLE_REFRESH_TOKEN"'~g' base/configMap.yaml
 
       - name: Deploy
         run: |-
           ./kustomize build base/ | kubectl apply -f -
           kubectl rollout status deployment/renata-backend-api
           kubectl get services -o wide
+
+        # TODO Use DNS
+      - name: Get Service External IP
+        id: get-service-external-ip
+        run: |-
+          echo ::set-output name=service-external-ip::$(kubectl get service renata-backend-api-service -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
