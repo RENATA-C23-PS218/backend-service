@@ -12,12 +12,12 @@ env:
   DEPLOYMENT_NAME: ${{ secrets.DEPLOYMENT_NAME }}
   REPOSITORY: ${{ secrets.REPOSITORY}}
   IMAGE: ${{ secrets.IMAGE }}
-  DB_USERNAME: ${{ secrets.DB_USERNAME }}
-  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-  DB_NAME: ${{ secrets.DB_NAME }}
-  DB_HOST: ${{ secrets.DB_HOST }}
-  DB_PORT: ${{ secrets.DB_PORT }}
-  DB_DIALECT: ${{ secrets.DB_DIALECT }}
+  DB_USERNAME: ${{ secrets.DB_USERNAME_DEV }}
+  DB_PASSWORD: ${{ secrets.DB_PASSWORD_DEV }}
+  DB_NAME: ${{ secrets.DB_NAME_DEV }}
+  DB_HOST: ${{ secrets.DB_HOST_DEV }}
+  DB_PORT: ${{ secrets.DB_PORT_DEV }}
+  DB_DIALECT: ${{ secrets.DB_DIALECT_DEV }}
   GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID}}
   GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET}}
   GOOGLE_REDIRECT_URI: ${{ secrets.GOOGLE_REDIRECT_URI}}
@@ -26,7 +26,6 @@ env:
   GOOGLE_CLOUD_STORAGE_BUCKET: ${{ secrets.GOOGLE_CLOUD_STORAGE_BUCKET}}
   GOOGLE_CLOUD_PROJECT_ID: ${{ secrets.GOOGLE_CLOUD_PROJECT_ID}}
   GOOGLE_SERVICE_UP_AVATAR_KEY: ${{ secrets.GOOGLE_SERVICE_UP_AVATAR_KEY}}
-  GOOGLE_SERVICE_UP_SOIL_KEY: ${{ secrets.GOOGLE_SERVICE_UP_SOIL_KEY}}
   JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY}}
 
 jobs:
