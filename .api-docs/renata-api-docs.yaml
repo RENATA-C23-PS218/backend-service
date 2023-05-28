@@ -3,22 +3,23 @@ info:
   title: Renata
   version: 1.0.0
 servers:
-  - url: 'http://localhost:3000'
+- url: 'http://localhost:3000'
+- url: 'http://34.128.101.7/'
 components:
   securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
 security:
-  - bearerAuth: []
+- bearerAuth: []
 tags:
-  - name: Auth
-  - name: Profile
+- name: Auth
+- name: Profile
 paths:
   /api/register:
     post:
       tags:
-        - Auth
+      - Auth
       summary: Register
       requestBody:
         content:
@@ -37,7 +38,7 @@ paths:
   /api/verify:
     post:
       tags:
-        - Auth
+      - Auth
       summary: Verify Email
       requestBody:
         content:
@@ -55,7 +56,7 @@ paths:
   /api/resend-verification:
     post:
       tags:
-        - Auth
+      - Auth
       summary: Resend OTP
       requestBody:
         content:
@@ -72,7 +73,7 @@ paths:
   /api/login:
     post:
       tags:
-        - Auth
+      - Auth
       summary: Login
       requestBody:
         content:
@@ -90,7 +91,7 @@ paths:
   /api/forgot-password:
     post:
       tags:
-        - Auth
+      - Auth
       summary: Forgot Password
       requestBody:
         content:
@@ -107,7 +108,7 @@ paths:
   /api/verify-reset-password:
     post:
       tags:
-        - Auth
+      - Auth
       summary: Verify Reset Password
       requestBody:
         content:
@@ -125,7 +126,7 @@ paths:
   /api/reset-password:
     put:
       tags:
-        - Auth
+      - Auth
       summary: Reset Password
       requestBody:
         content:
@@ -144,7 +145,7 @@ paths:
   /api/profile:
     get:
       tags:
-        - Profile
+      - Profile
       summary: Get Profile
       responses:
         '200':
@@ -153,7 +154,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - Profile
+      - Profile
       summary: Update Profile
       requestBody:
         content:
@@ -173,7 +174,7 @@ paths:
   /api/profile-image:
     post:
       tags:
-        - Profile
+      - Profile
       summary: Upload Profile Picture
       requestBody:
         content:
