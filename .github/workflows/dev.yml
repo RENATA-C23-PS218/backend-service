@@ -124,6 +124,7 @@ jobs:
           sed -i -e 's~ENV_REPOSITORY~'"$REPOSITORY"'~g' base/deployment.yaml
           sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/deployment.yaml
           sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/deployment.yaml
           sed -i -e 's~ENV_CONTAINER_PORT~'"$PORT"'~g' base/deployment.yaml
 
       - name: Deploy
