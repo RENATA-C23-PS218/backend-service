@@ -64,6 +64,10 @@ jobs:
           cluster_name: ${{ env.GKE_CLUSTER }}
           location: ${{ env.GKE_ZONE }}
 
+      - name: Configure Dockerfile Port Exposure
+        run: |-
+          sed -i -e 's~ENV_PORT~'"$PORT"'~g' .docker/Dockerfile
+
       - name: Build
         run: |-
           docker build -f .docker/Dockerfile \

@@ -10,5 +10,5 @@ COPY ./package*.json ./
 
 RUN npm install
 COPY . .
-EXPOSE $PORT
+EXPOSE ENV_PORT
 CMD ["npm", "start"]
