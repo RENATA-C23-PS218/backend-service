@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: renata-backend-api-service
-        image: GAR_LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:latest
+        image: ENV_GAR_LOCATION-docker.pkg.dev/ENV_PROJECT_ID/ENV_REPOSITORY/ENV_IMAGE:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: CONTAINER_PORT
+        - containerPort: ENV_CONTAINER_PORT
         env:
         - name: NODE_ENV
           value: "development"
