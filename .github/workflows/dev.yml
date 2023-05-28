@@ -27,7 +27,7 @@ env:
   GOOGLE_CLOUD_PROJECT_ID: ${{ secrets.GOOGLE_CLOUD_PROJECT_ID}}
   GOOGLE_SERVICE_UP_AVATAR_KEY: ${{ secrets.GOOGLE_SERVICE_UP_AVATAR_KEY}}
   JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY}}
-  PORT: ${{ secrets.PORT}}
+  CONTAINER_PORT: ${{ secrets.PORT}}
 
 jobs:
   setup-build-publish-deploy:
@@ -66,7 +66,7 @@ jobs:
 
       - name: Configure Dockerfile Port Exposure
         run: |-
-          sed -i -e 's~ENV_PORT~'"$PORT"'~g' .docker/Dockerfile
+          sed -i -e 's~ENV_PORT~'"$CONTAINER_PORT"'~g' .docker/Dockerfile
 
       - name: Build
         run: |-
@@ -93,7 +93,7 @@ jobs:
 
       - name: Configure Target Port in Service
         run: |-
-          sed -i -e 's~ENV_TARGET_PORT~'"$PORT"'~g' base/service.yaml
+          sed -i -e 's~ENV_TARGET_PORT~'"$CONTAINER_PORT"'~g' base/service.yaml
 
       - name: Configure Container Port and Image in Deployment
         run: |-
@@ -102,7 +102,7 @@ jobs:
           sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/deployment.yaml
           sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/deployment.yaml
           sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_CONTAINER_PORT~'"$PORT"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_CONTAINER_PORT~'"$CONTAINER_PORT"'~g' base/deployment.yaml
 
       - name: Configure Database in Config Map
         run: |-
