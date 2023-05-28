@@ -91,6 +91,19 @@ jobs:
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
           chmod u+x ./kustomize
 
+      - name: Configure Target Port in Service
+        run: |-
+          sed -i -e 's~ENV_TARGET_PORT~'"$PORT"'~g' base/service.yaml
+
+      - name: Configure Container Port and Image in Deployment
+        run: |-
+          sed -i -e 's~ENV_GAR_LOCATION~'"$GAR_LOCATION"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_REPOSITORY~'"$REPOSITORY"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_CONTAINER_PORT~'"$PORT"'~g' base/deployment.yaml
+
       - name: Configure Database in Config Map
         run: |-
           sed -i -e 's~ENV_DB_USERNAME_DEV~'"$DB_USERNAME"'~g' base/configMap.yaml
@@ -113,19 +126,6 @@ jobs:
           sed -i -e 's~ENV_GOOGLE_CLIENT_SECRET~'"$GOOGLE_CLIENT_SECRET"'~g' base/configMap.yaml
           sed -i -e 's~ENV_GOOGLE_REDIRECT_URI~'"$GOOGLE_REDIRECT_URI"'~g' base/configMap.yaml
           sed -i -e 's~ENV_GOOGLE_REFRESH_TOKEN~'"$GOOGLE_REFRESH_TOKEN"'~g' base/configMap.yaml
-
-      - name: Configure Target Port in Service
-        run: |-
-          sed -i -e 's~ENV_TARGET_PORT~'"$PORT"'~g' base/service.yaml
-
-      - name: Configure Container Port and Image in Deployment
-        run: |-
-          sed -i -e 's~ENV_GAR_LOCATION~'"$GAR_LOCATION"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_REPOSITORY~'"$REPOSITORY"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_CONTAINER_PORT~'"$PORT"'~g' base/deployment.yaml
 
       - name: Deploy
         run: |-
