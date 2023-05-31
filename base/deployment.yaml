@@ -24,76 +24,76 @@ spec:
           value: "development"
         - name: DB_USERNAME
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: db_username_dev
         - name: DB_PASSWORD
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: db_password_dev
         - name: DB_NAME
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: db_name_dev
         - name: DB_HOST
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: db_host_dev
         - name: DB_PORT
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: db_port_dev
         - name: DB_DIALECT
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: db_dialect_dev
         - name: GOOGLE_CLIENT_ID
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: google_client_id
         - name: GOOGLE_CLIENT_SECRET
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: google_client_secret
         - name: GOOGLE_REDIRECT_URI
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: google_redirect_uri
         - name: GOOGLE_REFRESH_TOKEN
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: google_refresh_token
         - name: GOOGLE_EMAIL
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: google_email
         - name: GOOGLE_CLOUD_STORAGE_BUCKET
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: google_cloud_storage_bucket
         - name: GOOGLE_CLOUD_PROJECT_ID
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: google_cloud_project_id
         - name: JWT_SECRET_KEY
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: jwt_secret_key
         - name: GOOGLE_SERVICE_UP_AVATAR_KEY
           valueFrom:
-            configMapKeyRef:
-              name: renata-backend-api-configmap
+            secretKeyRef:
+              name: renata-backend-api-secret
               key: key.json
