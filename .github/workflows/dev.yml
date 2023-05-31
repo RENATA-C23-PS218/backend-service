@@ -102,7 +102,8 @@ jobs:
           sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/deployment.yaml
           sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/deployment.yaml
           sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_CONTAINER_PORT~'"$CONTAINER_PORT"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_DB_PORT_DEV~'"$DB_PORT"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_DB_INSTANCE_CONNECTION_NAME_DEV~'"$DB_INSTANCE_CONNECTION_NAME"'~g' base/deployment.yaml
 
       - name: Configure Database in Secret
         run: |-
