@@ -18,7 +18,7 @@ spec:
         image: ENV_GAR_LOCATION-docker.pkg.dev/ENV_PROJECT_ID/ENV_REPOSITORY/ENV_IMAGE:ENV_GITHUB_SHA
         imagePullPolicy: Always
         ports:
-        - containerPort: ENV_CONTAINER_PORT
+        - containerPort: 3000
         env:
         - name: NODE_ENV
           value: "development"
