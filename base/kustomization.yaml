@@ -4,4 +4,6 @@ resources:
 - service.yaml
 - deployment.yaml
 - podScaler.yaml
-- configMap.yaml
+- ingress.yaml
+- manageCert.yaml
+- secret.yaml

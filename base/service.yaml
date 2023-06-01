@@ -6,7 +6,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: ENV_TARGET_PORT
+    targetPort: 3000
   type: LoadBalancer
   selector:
     app: renata-backend-api

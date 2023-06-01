@@ -18,6 +18,7 @@ env:
   DB_HOST: ${{ secrets.DB_HOST_DEV }}
   DB_PORT: ${{ secrets.DB_PORT_DEV }}
   DB_DIALECT: ${{ secrets.DB_DIALECT_DEV }}
+  DB_INSTANCE_CONNECTION_NAME: ${{ secrets.DB_INSTANCE_CONNECTION_NAME_DEV }}
   GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID}}
   GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET}}
   GOOGLE_REDIRECT_URI: ${{ secrets.GOOGLE_REDIRECT_URI}}
@@ -102,30 +103,32 @@ jobs:
           sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/deployment.yaml
           sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/deployment.yaml
           sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_CONTAINER_PORT~'"$CONTAINER_PORT"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_DB_PORT_DEV~'"$DB_PORT"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_DB_INSTANCE_CONNECTION_NAME_DEV~'"$DB_INSTANCE_CONNECTION_NAME"'~g' base/deployment.yaml
 
-      - name: Configure Database in Config Map
+      - name: Configure Database in Secret
         run: |-
-          sed -i -e 's~ENV_DB_USERNAME_DEV~'"$DB_USERNAME"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_PASSWORD_DEV~'"$DB_PASSWORD"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_NAME_DEV~'"$DB_NAME"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_HOST_DEV~'"$DB_HOST"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_PORT_DEV~'"$DB_PORT"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_DB_DIALECT_DEV~'"$DB_DIALECT"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_DB_USERNAME_DEV~'"$DB_USERNAME"'~g' base/secret.yaml
+          sed -i -e 's~ENV_DB_PASSWORD_DEV~'"$DB_PASSWORD"'~g' base/secret.yaml
+          sed -i -e 's~ENV_DB_NAME_DEV~'"$DB_NAME"'~g' base/secret.yaml
+          sed -i -e 's~ENV_DB_HOST_DEV~'"$DB_HOST"'~g' base/secret.yaml
+          sed -i -e 's~ENV_DB_PORT_DEV~'"$DB_PORT"'~g' base/secret.yaml
+          sed -i -e 's~ENV_DB_DIALECT_DEV~'"$DB_DIALECT"'~g' base/secret.yaml
+          sed -i -e 's~ENV_DB_INSTANCE_CONNECTION_NAME_DEV~'"$DB_INSTANCE_CONNECTION_NAME"'~g' base/secret.yaml
 
-      - name: Configure Environment Variables in Config Map
+      - name: Configure Environment Variables in Secret
         run: |-
-          sed -i -e 's~ENV_GOOGLE_SERVICE_UP_AVATAR_KEY~'"$GOOGLE_SERVICE_UP_AVATAR_KEY"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_JWT_SECRET_KEY~'"$JWT_SECRET_KEY"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_GOOGLE_EMAIL~'"$GOOGLE_EMAIL"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_GOOGLE_CLOUD_STORAGE_BUCKET~'"$GOOGLE_CLOUD_STORAGE_BUCKET"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_GOOGLE_CLOUD_PROJECT_ID~'"$GOOGLE_CLOUD_PROJECT_ID"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_PORT~'"$PORT"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_GOOGLE_CLIENT_ID~'"$GOOGLE_CLIENT_ID"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_GOOGLE_CLIENT_SECRET~'"$GOOGLE_CLIENT_SECRET"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_GOOGLE_REDIRECT_URI~'"$GOOGLE_REDIRECT_URI"'~g' base/configMap.yaml
-          sed -i -e 's~ENV_GOOGLE_REFRESH_TOKEN~'"$GOOGLE_REFRESH_TOKEN"'~g' base/configMap.yaml
+          sed -i -e 's~ENV_GOOGLE_SERVICE_UP_AVATAR_KEY~'"$GOOGLE_SERVICE_UP_AVATAR_KEY"'~g' base/secret.yaml
+          sed -i -e 's~ENV_JWT_SECRET_KEY~'"$JWT_SECRET_KEY"'~g' base/secret.yaml
+          sed -i -e 's~ENV_GOOGLE_EMAIL~'"$GOOGLE_EMAIL"'~g' base/secret.yaml
+          sed -i -e 's~ENV_GOOGLE_CLOUD_STORAGE_BUCKET~'"$GOOGLE_CLOUD_STORAGE_BUCKET"'~g' base/secret.yaml
+          sed -i -e 's~ENV_GOOGLE_CLOUD_PROJECT_ID~'"$GOOGLE_CLOUD_PROJECT_ID"'~g' base/secret.yaml
+          sed -i -e 's~ENV_PORT~'"$PORT"'~g' base/secret.yaml
+          sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/secret.yaml
+          sed -i -e 's~ENV_GOOGLE_CLIENT_ID~'"$GOOGLE_CLIENT_ID"'~g' base/secret.yaml
+          sed -i -e 's~ENV_GOOGLE_CLIENT_SECRET~'"$GOOGLE_CLIENT_SECRET"'~g' base/secret.yaml
+          sed -i -e 's~ENV_GOOGLE_REDIRECT_URI~'"$GOOGLE_REDIRECT_URI"'~g' base/secret.yaml
+          sed -i -e 's~ENV_GOOGLE_REFRESH_TOKEN~'"$GOOGLE_REFRESH_TOKEN"'~g' base/secret.yaml
 
       - name: Deploy
         run: |-
