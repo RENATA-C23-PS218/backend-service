@@ -12,7 +12,6 @@ spec:
       labels:
         app: renata-backend-api
     spec:
-      serviceAccountName: renata-dev-gke-sa
       containers:
       - name: renata-backend-api-service
         image: ENV_GAR_LOCATION-docker.pkg.dev/ENV_PROJECT_ID/ENV_REPOSITORY/ENV_IMAGE:ENV_GITHUB_SHA
