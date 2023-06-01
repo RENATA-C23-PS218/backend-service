@@ -20,83 +20,86 @@ spec:
         ports:
         - containerPort: 3000
         env:
-        - name: NODE_ENV
-          value: "development"
         - name: DB_USERNAME
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: db_username_dev
+              key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: db_password_dev
-        - name: DB_NAME
-          valueFrom:
-            secretKeyRef:
-              name: renata-backend-api-secret
-              key: db_name_dev
+              key: DB_PASSWORD
         - name: DB_HOST
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: db_host_dev
+              key: DB_HOST
         - name: DB_PORT
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: db_port_dev
+              key: DB_PORT
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: DB_NAME
         - name: DB_DIALECT
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: db_dialect_dev
+              key: DB_DIALECT
         - name: GOOGLE_CLIENT_ID
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: google_client_id
+              key: GOOGLE_CLIENT_ID
         - name: GOOGLE_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: google_client_secret
+              key: GOOGLE_CLIENT_SECRET
         - name: GOOGLE_REDIRECT_URI
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: google_redirect_uri
+              key: GOOGLE_REDIRECT_URI
         - name: GOOGLE_REFRESH_TOKEN
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: google_refresh_token
+              key: GOOGLE_REFRESH_TOKEN
         - name: GOOGLE_EMAIL
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: google_email
+              key: GOOGLE_EMAIL
         - name: GOOGLE_CLOUD_STORAGE_BUCKET
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: google_cloud_storage_bucket
-        - name: GOOGLE_CLOUD_PROJECT_ID
+              key: GOOGLE_CLOUD_STORAGE_BUCKET
+        - name: GOOGLE_PROJECT_ID
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: google_cloud_project_id
-        - name: JWT_SECRET_KEY
-          valueFrom:
-            secretKeyRef:
-              name: renata-backend-api-secret
-              key: jwt_secret_key
+              key: GOOGLE_PROJECT_ID
         - name: GOOGLE_SERVICE_UP_AVATAR_KEY
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: key.json
+              key: GOOGLE_SERVICE_UP_AVATAR_KEY
+        - name: JWT_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: JWT_SECRET_KEY
+        - name: CONTAINER_PORT
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: CONTAINER_PORT
       - name: cloud-sql-proxy
       image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.1.0
       args:

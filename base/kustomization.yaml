@@ -6,4 +6,3 @@ resources:
 - podScaler.yaml
 - ingress.yaml
 - manageCert.yaml
-- secret.yaml
