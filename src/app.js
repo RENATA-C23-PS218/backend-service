@@ -24,6 +24,6 @@ app.use((err, req, res) => {
   return response(res, 500, false, err.message, null);
 });
 
-app.listen(process.env.PORT || 3000, () =>
-  console.log(`Listening on port ${process.env.PORT}`)
+app.listen(process.env.CONTAINER_PORT || 3000, () =>
+  console.log(`Listening on port ${process.env.CONTAINER_PORT}`)
 );
