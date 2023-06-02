@@ -3,6 +3,7 @@ const { nanoid } = require("nanoid");
 const sendEmail = require("../../config/nodemailer");
 const { response } = require("../../utils/response");
 const generateOTP = require("../../utils/otp");
+const htmlTemplate = require("../../utils/html-template");
 
 const forgotPassword = async (req, res) => {
   try {
@@ -23,7 +24,7 @@ const forgotPassword = async (req, res) => {
       is_used: false,
     });
 
-    const html = `<p>${otp}</p>`;
+    const html = await htmlTemplate("verify-reset-password.ejs", { otp });
     await sendEmail(user.email, "Reset Password - Renata", html);
 
     return response(res, 200, true, "Reset password OTP has been send", null);
