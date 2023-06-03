@@ -4,6 +4,7 @@ const { User, Role, OTP, Profile } = require("../../models");
 const { response } = require("../../utils/response");
 const sendEmail = require("../../config/nodemailer");
 const generateOTP = require("../../utils/otp");
+const htmlTemplate = require("../../utils/html-template");
 
 const register = async (req, res) => {
   try {
@@ -51,7 +52,7 @@ const register = async (req, res) => {
       is_used: false,
     });
 
-    const html = `<p>${otp}</p>`;
+    const html = await htmlTemplate("verify-email.ejs", { otp });
     await sendEmail(user.email, "Verify Email - Renata", html);
 
     return response(res, 201, true, "Register success", { id: user.id, email });
