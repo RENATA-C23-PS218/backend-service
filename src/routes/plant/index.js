@@ -4,7 +4,7 @@ const middlewares = require("../../middlewares/restrict");
 const validation = require("../../utils/validations/plant-validation")
 
 router.post(
-  "/plat-recommendation",
+  "/plant-recommendations",
   middlewares.restrict,
   validation.plantsRecommendationValidation,
   controllers.plantRecommendation
