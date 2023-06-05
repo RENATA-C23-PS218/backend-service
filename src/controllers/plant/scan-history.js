@@ -27,6 +27,7 @@ const scanHistory = async (req, res) => {
     for (const history of histories) {
       const data = {
         soil_type: history.soil.name,
+        soil_image: history.soil_image,
         date_scan: history.createdAt,
       };
       scanHistories.push(data);
