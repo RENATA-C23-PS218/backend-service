@@ -3,7 +3,8 @@ const { responseValidationError } = require("../response");
 
 const plantsRecommendationValidation = (req, res, next) => {
   const schema = Joi.object({
-    soilType: Joi.string().required().label("Soil Type"),
+    soilType: Joi.string().required(),
+    file: Joi.any(),
   });
 
   const { error } = schema.validate(req.body);

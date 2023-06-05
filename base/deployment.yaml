@@ -74,21 +74,26 @@ spec:
             secretKeyRef:
               name: renata-backend-api-secret
               key: GOOGLE_EMAIL
-        - name: GOOGLE_CLOUD_STORAGE_BUCKET
+        - name: GOOGLE_CLOUD_STORAGE_BUCKET_PROFILE
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: GOOGLE_CLOUD_STORAGE_BUCKET
+              key: GOOGLE_CLOUD_STORAGE_BUCKET_PROFILE
+        - name: GOOGLE_CLOUD_STORAGE_BUCKET_SOIL
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_CLOUD_STORAGE_BUCKET_SOIL
         - name: GOOGLE_PROJECT_ID
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
               key: GOOGLE_PROJECT_ID
-        - name: GOOGLE_SERVICE_UP_AVATAR_KEY
+        - name: GOOGLE_SERVICE_ACCOUNT_KEY
           valueFrom:
             secretKeyRef:
               name: renata-backend-api-secret
-              key: GOOGLE_SERVICE_UP_AVATAR_KEY
+              key: GOOGLE_SERVICE_ACCOUNT_KEY
         - name: JWT_SECRET_KEY
           valueFrom:
             secretKeyRef:

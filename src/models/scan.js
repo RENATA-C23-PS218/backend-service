@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       user_id: DataTypes.STRING,
       soil_id: DataTypes.STRING,
+      soil_image: DataTypes.STRING,
     },
     {
       sequelize,
