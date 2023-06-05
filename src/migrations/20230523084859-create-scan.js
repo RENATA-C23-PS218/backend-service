@@ -14,6 +14,9 @@ module.exports = {
       soil_id: {
         type: Sequelize.STRING,
       },
+      soil_image: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
