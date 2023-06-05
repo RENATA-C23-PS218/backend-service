@@ -17,6 +17,7 @@ const get = async (req, res) => {
       last_name: profile.last_name,
       phone: profile.phone,
       address: profile.address,
+      avatar_link: profile.avatar_link,
     });
   } catch (error) {
     return response(res, error.status || 500, false, error.message, null);
