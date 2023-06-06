@@ -38,6 +38,7 @@ const register = async (req, res) => {
       last_name: "",
       phone: "",
       address: "",
+      avatar_link: "",
     });
 
     const otpId = nanoid(10);
