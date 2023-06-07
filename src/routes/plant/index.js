@@ -18,5 +18,6 @@ router.post(
   controllers.plantRecommendation
 );
 router.get("/scan-histories", middlewares.restrict, controllers.scanHistory);
+router.get("/history-detail/:id", middlewares.restrict, controllers.historyDetail)
 
 module.exports = router;
