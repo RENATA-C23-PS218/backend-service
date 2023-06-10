@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Access extends Model {
+  class Scan extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -9,22 +9,27 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Access.belongsTo(models.Role, {
-        foreignKey: "role_id",
-        as: "role",
+      Scan.belongsTo(models.User, {
+        foreignKey: "user_id",
+        as: "user",
+      });
+
+      Scan.belongsTo(models.Soil, {
+        foreignKey: "soil_id",
+        as: "soil",
       });
     }
   }
-  Access.init(
+  Scan.init(
     {
-      role_id: DataTypes.INTEGER,
-      read: DataTypes.BOOLEAN,
-      write: DataTypes.BOOLEAN,
+      user_id: DataTypes.STRING,
+      soil_id: DataTypes.STRING,
+      soil_image: DataTypes.STRING,
     },
     {
       sequelize,
-      modelName: "Access",
+      modelName: "Scan",
     }
   );
-  return Access;
+  return Scan;
 };

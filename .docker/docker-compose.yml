@@ -1,0 +1,11 @@
+version: 3-9
+
+services:
+  renata-app-service:
+    image: renata-app:latest
+    restart: on-failure
+    depends_on:
+      - renata-db-service
+    env_file: ../.env
+    ports:
+      - "$PORT:$PORT"

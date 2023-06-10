@@ -1,0 +1,2070 @@
+[
+  {
+    "Tanaman": "Palawija",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Padi",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Barley",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Sorgum",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kelapa",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kunyit",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Tembakau",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Ketela",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Bawang Merah",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kangkung",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Okra",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Alpukat",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Ceri",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Zaitun",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Delima",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kiwi",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kacang Merah",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kacang Tanah",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kacang Hijau",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Rumput Gajah",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Singkong",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pala",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Nangka",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Sukun",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kelapa Sawit",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Durian",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Beras",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Gandum",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Jelai",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Jagung (Maize)",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Millet",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kedelai",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kacang polong",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Lentil",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Buncis",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kacang fava",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Bunga matahari",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Rapeseed (Canola)",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Wijen",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Safflower",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kapas",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Rami",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kentang",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Ubi jalar",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Wortel",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Bit",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Lobak",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Selada",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Bayam",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kale",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Lobak Swiss",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Sayuran collard",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kubis",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Brokoli",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kembang kol",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Kubis Brussel",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Tomat",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Paprika",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Terong",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Mentimun",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Labu",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Labu",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Semangka",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon persik",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon jeruk",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon apel",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon pir",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon plum",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Stroberi",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Blueberry",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Raspberry",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Blackberry",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Anggur",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Basil",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Peterseli",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Mint",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Thyme",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Oregano",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Lavender",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Chamomile",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Echinacea",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Ginseng",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon kenari",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon kemiri",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon almond",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon kemiri",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Mangga",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pisang",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Nanas",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pepaya",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Tebu",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Bit gula",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Alfalfa",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Semanggi",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Ryegrass",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Rumput Bermuda",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Mawar",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Lilies",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Tulip",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Marigold",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Petunia",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon maple",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon willow",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pohon poplar",
+    "Tanah": "Aluvial"
+  },
+  {
+    "Tanaman": "Pinus",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kayu Manis",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kina",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Leci",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Pala",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Padi Gogo",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Jagung",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Jahe",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Lengkeng",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Ketela Rambat",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Rami",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kol",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Salak",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Apel",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Bawang Putih",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Bawang Daun",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Petsai",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Sawi",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kacang Panjang",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kacang Kapri",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kacang Tanah",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Brokoli",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Asparagus",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Biet",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Palawija",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Pare",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Cengkeh",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Nangka",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Melon",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Terong",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kopi",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Teh",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kakao",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Nanas",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Tebu",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Pisang",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Pepaya",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Buah markisa",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Alpukat",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Buah jeruk",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Mangga",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kacang macadamia",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Maca",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Quinoa",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kentang",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Tomat",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Paprika",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kacang-kacangan",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kubis",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Wortel",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Beras",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Gandum",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Jelai",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Gandum",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Rye",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kedelai",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kacang polong",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Lentil",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Buncis",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Bunga matahari",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Rapeseed (Canola)",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Wijen",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Ubi jalar",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Singkong",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Taro",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Ubi",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Stroberi",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Blueberry",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Raspberry",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Blackberry",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Bayam",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Kale",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Lobak Swiss",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Selada",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Basil",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Peterseli",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Ketumbar",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Rosemary",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Thyme",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Mawar",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Anggrek",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Lilies",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Aster Gerbera",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Alfalfa",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Semanggi",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Ryegrass",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Rumput Timothy",
+    "Tanah": "Andosol"
+  },
+  {
+    "Tanaman": "Padi",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Palawija",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Tebu",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Jagung (Maize)",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kedelai",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kacang",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Bunga matahari",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kacang-kacangan (seperti kacang semak atau kacang polong)",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Sawi hijau",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Selada",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Lobak",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Rumput Bermuda",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Bahiagrass",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Buffalograss",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Rumput grama biru",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Fescue tinggi",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Semanggi",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Alfalfa",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kacang polong",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Lentil",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Buncis",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Wortel",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Bit",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Lobak",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kentang",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Ubi jalar",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Selada",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Bayam",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kale",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Lobak Swiss",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Sayuran collard",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kubis",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Brokoli",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kembang kol",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Kubis Brussel",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Tomat",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Paprika",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Terong",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Mentimun",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Labu",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Semangka",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Pohon apel",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Pohon pir",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Pohon persik",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Pohon plum",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Marigold",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Petunia",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Zinnias",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Bunga matahari",
+    "Tanah": "Entisol"
+  },
+  {
+    "Tanaman": "Padi",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Sawi",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Bayam",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Kangkung",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Andong",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Nanas",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Kelapa",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Tomat",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Paprika",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Mentimun",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Zucchini",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Terong",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Kacang-kacangan (seperti kacang hijau atau kacang buncis)",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Selada",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Bayam",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Kale",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Kubis",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Pohon apel",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Pohon pir",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Pohon plum",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Pohon ceri",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Semak-semak blueberry",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Semak-semak raspberry",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Tanaman stroberi",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Semak-semak blackberry",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Pohon ara",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Wortel",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Kentang",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Ubi jalar",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Bit",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Lobak",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Lobak",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Bayam",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Lobak Swiss",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Basil",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Peterseli",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Ketumbar",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Dill",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Mint",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Kacang polong",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Kacang-kacangan (seperti kacang merah, kacang pinto, atau kacang hitam)",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Lentil",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Mawar",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Bunga matahari",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Marigold",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Dahlia",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Zinnias",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Geranium",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Gandum",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Jelai",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Gandum",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Rye",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Semanggi",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Alfalfa",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Soba",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Rye musim dingin",
+    "Tanah": "Humus"
+  },
+  {
+    "Tanaman": "Tebu",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Tembakau",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Coklat",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Panili",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Pala",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Kakao",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Kopi",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Karet",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Kelapa Sawit",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Gandum",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Jelai",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Gandum",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Jagung (Maize)",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Beras",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Millet",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Kedelai",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Kacang",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Lentil",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Buncis",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Semanggi",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Kubis",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Wortel",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Bit",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Bawang",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Kentang",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Selada",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Lobak",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Bayam",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Brokoli",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Kembang kol",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Pohon apel",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Pohon pir",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Pohon plum",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Pohon ceri",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Pohon persik",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Rumput Bermuda",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Bahiagrass",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Ryegrass",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Rumput Timothy",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Alfalfa",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Bunga matahari",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Canola",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Safflower",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Marigold",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Petunia",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Geranium",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Zinnias",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Aster",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Lilies",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Rye musim dingin",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Semanggi merah tua",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Vetch berbulu",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Soba",
+    "Tanah": "Inceptisol"
+  },
+  {
+    "Tanaman": "Jati",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Mahoni",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Palawija",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Jambu Mete",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Badam",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Jujube",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Dril",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Prem",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Higuera",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Granado",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Pisang",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Clementina",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Mandarin",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Jeruk",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Grapefruit",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Kumquat",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Lima",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Lemon",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Kangkung",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Buncis",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Labu",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Tembakau",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Pohon apel",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Pohon pir",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Pohon ceri",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Pohon persik",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Semak-semak raspberry",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Semak-semak blackberry",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Anggur anggur",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Asparagus",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Bit",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Brokoli",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Kubis Brussel",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Kubis",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Wortel",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Kembang kol",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Seledri",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Mentimun",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Bawang putih",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Tomat",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Mint",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Thyme",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Lavender",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Rosemary",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Geranium",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Lilies",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Yarrow",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Iris",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Sedum",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Rumput fescue biru",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Kacang fava",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Kacang polong",
+    "Tanah": "Kapur"
+  },
+  {
+    "Tanaman": "Kelapa",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kelapa Sawit",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Karet",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Jagung",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Cengkeh",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Singkong",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Coklat",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Palawija",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kakao",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kopi",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Alang-alang",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon jambu mete",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon akasia",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon kayu putih",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon jati",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Bugenvil",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kembang sepatu",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Oleander",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Croton",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Rumput napier",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Rumput Guinea",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Para rumput",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Rumput gajah",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kacang polong merpati",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kacang Lablab",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kacang tunggak",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Millet",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Sorgum",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Singkong",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Ubi jalar",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Taro",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Jahe",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kacang tanah",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Bunga matahari",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon mimba",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Lidah buaya",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Sarsaparilla India",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Okra",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Labu pahit",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Labu ular",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kacang panjang",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Sayuran bayam",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon mangga",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon nangka",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon sukun",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pohon jambu biji",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Serai",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kunyit",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Daun kari",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kemangi suci (Tulsi)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Lada hitam",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Bugenvil",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Plumeria (Kamboja)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Burung cendrawasih (Strelitzia reginae)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Adenium (Mawar gurun)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kalanchoe",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Gooseberry India (Amla)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Ashwagandha",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Pegagan",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Giloy (Tinospora cordifolia)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Centrosema (Centrosema pubescens)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Desmodium (Desmodium heterophyllum)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Rami matahari (Crotalaria juncea)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Kacang tunggak (Vigna unguiculata)",
+    "Tanah": "Laterit"
+  },
+  {
+    "Tanaman": "Wortel",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Buah Naga",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Lobak",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Selada",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Mentimun",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Zucchini",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Melon",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Jagung",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Kacang-kacangan (seperti kacang hijau dan kacang buncis)",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Paprika",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Tomat",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Pohon jeruk",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Nanas",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Semak-semak blueberry",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Semak-semak raspberry",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Tanaman stroberi",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Rosemary",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Thyme",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Sage",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Lavender",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Rumput air mancur (Pennisetum setaceum)",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Rumput bulu Meksiko (Nassella tenuissima)",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Rumput fescue biru (Festuca glauca)",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Rumput beralih (Panicum virgatum)",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Marigold",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Bawang merah",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Kelapa",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Kelapa sawit",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Kurma",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Katang-katang",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Singkong",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Semangka",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Jarak Pagar",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Bit",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Parsnip",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Kentang",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Kaktus",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Paku",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Bawang Putih",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Sukulen",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Bunga matahari",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Lantana",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Zinnias",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Gaillardia (Bunga selimut)",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Kacang",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Lentil",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Semanggi",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Rumput pantai",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Gandum laut",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Kemuliaan pagi pantai",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Goldenrod tepi laut",
+    "Tanah": "Pasir"
+  },
+  {
+    "Tanaman": "Lavender laut",
+    "Tanah": "Pasir"
+  }
+]

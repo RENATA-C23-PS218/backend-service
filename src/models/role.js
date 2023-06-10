@@ -13,11 +13,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "role_id",
         as: "user",
       });
-
-      Role.hasOne(models.Access, {
-        foreignKey: "role_id",
-        as: "access",
-      });
     }
   }
   Role.init(

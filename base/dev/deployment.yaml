@@ -1,0 +1,106 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: renata-backend-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: renata-backend-api
+  template:
+    metadata:
+      labels:
+        app: renata-backend-api
+    spec:
+      containers:
+      - name: renata-backend-api-service
+        image: ENV_GAR_LOCATION-docker.pkg.dev/ENV_PROJECT_ID/ENV_REPOSITORY/ENV_IMAGE:ENV_GITHUB_SHA
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: DB_USERNAME
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: DB_PASSWORD
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: DB_PORT
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: DB_NAME
+        - name: DB_DIALECT
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: DB_DIALECT
+        - name: GOOGLE_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_CLIENT_ID
+        - name: GOOGLE_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_CLIENT_SECRET
+        - name: GOOGLE_REDIRECT_URI
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_REDIRECT_URI
+        - name: GOOGLE_REFRESH_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_REFRESH_TOKEN
+        - name: GOOGLE_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_EMAIL
+        - name: GOOGLE_CLOUD_STORAGE_BUCKET_PROFILE
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_CLOUD_STORAGE_BUCKET_PROFILE
+        - name: GOOGLE_CLOUD_STORAGE_BUCKET_SOIL
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_CLOUD_STORAGE_BUCKET_SOIL
+        - name: GOOGLE_PROJECT_ID
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_PROJECT_ID
+        - name: GOOGLE_SERVICE_ACCOUNT_KEY
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: GOOGLE_SERVICE_ACCOUNT_KEY
+        - name: JWT_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: JWT_SECRET_KEY
+        - name: CONTAINER_PORT
+          valueFrom:
+            secretKeyRef:
+              name: renata-backend-api-secret
+              key: CONTAINER_PORT

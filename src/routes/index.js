@@ -1,25 +1,12 @@
 const router = require("express").Router();
-const controllers = require("../controllers");
-const validation = require("../utils/validation");
+const auth = require("./auth");
+const profile = require("./profile");
+const apiDocs = require("./api-docs");
+const plant = require("./plant");
 
-router.post("/register", validation.registerValidation, controllers.register);
-router.post("/verify", validation.verifyOTPValidation, controllers.verifyOTP);
-router.post("/login", validation.loginValidation, controllers.login);
-router.post(
-  "/forgot-password",
-  validation.forgotPasswordValidation,
-  controllers.forgotPassword
-);
-router.post(
-  "/verify-reset-password",
-  validation.verifyOTPValidation,
-  controllers.verifyOTPResetPassword
-);
-router.post(
-  "/reset-password",
-  validation.resetPasswordValidation,
-  controllers.resetPassword
-);
-router.post("/resend-verification", controllers.resendOTP);
+router.use(auth);
+router.use(profile);
+router.use(apiDocs);
+router.use(plant);
 
 module.exports = router;
