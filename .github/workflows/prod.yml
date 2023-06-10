@@ -1,23 +1,25 @@
-name: Build and Deploy Development Service to GKE Cluster
+name: Build and Deploy Productin Service to GKE Cluster
 
 on:
   push:
-    branches: ["dev"]
+    branches: ["main"]
 
 env:
-  PROJECT_ID: ${{ secrets.PROJECT_ID }}
-  GAR_LOCATION: ${{ secrets.GAR_LOCATION }}
-  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER }}
-  GKE_ZONE: ${{ secrets.GKE_ZONE }}
-  DEPLOYMENT_NAME: ${{ secrets.DEPLOYMENT_NAME }}
-  REPOSITORY: ${{ secrets.REPOSITORY}}
-  IMAGE: ${{ secrets.IMAGE }}
+  PROJECT_ID: ${{ secrets.PROJECT_ID_PROD }}
+  GAR_LOCATION: ${{ secrets.GAR_LOCATION_PROD }}
+  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_PROD }}
+  GKE_ZONE: ${{ secrets.GKE_ZONE_PROD }}
+  DEPLOYMENT_NAME: ${{ secrets.DEPLOYMENT_NAME_PROD }}
+  REPOSITORY: ${{ secrets.REPOSITORY_PROD}}
+  IMAGE: ${{ secrets.IMAGE_PROD }}
+  GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS_PROD }}
+  PROD_SA: ${{ secrets.CI_CD_SERVICE_ACCOUNT_PROD }}
 
 jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
-    environment: development
+    environment: production
 
     permissions:
       contents: "read"
@@ -30,7 +32,7 @@ jobs:
       - id: "auth"
         uses: "google-github-actions/auth@v1"
         with:
-          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+          credentials_json: $GCP_CREDENTIALS
 
       - id: "setup"
         uses: "google-github-actions/setup-gcloud@v1"
@@ -38,9 +40,9 @@ jobs:
       - name: Docker configuration
         run: |-
           gcloud auth print-access-token \
-            --impersonate-service-account ${{ secrets.ACCOUNT }} | docker login \
+            --impersonate-service-account $PROD_SA | docker login \
             -u oauth2accesstoken \
-            --password-stdin https://${{ secrets.GAR_LOCATION }}-docker.pkg.dev
+            --password-stdin https://$GAR_LOCATION-docker.pkg.dev
 
       - name: Set up GKE credentials
         uses: google-github-actions/get-gke-credentials@v0
@@ -77,14 +79,14 @@ jobs:
 
       - name: Configure Container Port and Image in Deployment
         run: |-
-          sed -i -e 's~ENV_GAR_LOCATION~'"$GAR_LOCATION"'~g' base/dev/deployment.yaml
-          sed -i -e 's~ENV_REPOSITORY~'"$REPOSITORY"'~g' base/dev/deployment.yaml
-          sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/dev/deployment.yaml
-          sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/dev/deployment.yaml
-          sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/dev/deployment.yaml
+          sed -i -e 's~ENV_GAR_LOCATION~'"$GAR_LOCATION"'~g' base/prod/deployment.yaml
+          sed -i -e 's~ENV_REPOSITORY~'"$REPOSITORY"'~g' base/prod/deployment.yaml
+          sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/prod/deployment.yaml
+          sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/prod/deployment.yaml
+          sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/prod/deployment.yaml
 
       - name: Deploy
         run: |-
-          ./kustomize build base/dev | kubectl apply -f -
+          ./kustomize build base/prod | kubectl apply -f -
           kubectl rollout status deployment/renata-backend-api
           kubectl get services -o wide
