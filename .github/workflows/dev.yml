@@ -77,14 +77,14 @@ jobs:
 
       - name: Configure Container Port and Image in Deployment
         run: |-
-          sed -i -e 's~ENV_GAR_LOCATION~'"$GAR_LOCATION"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_REPOSITORY~'"$REPOSITORY"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/deployment.yaml
-          sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/deployment.yaml
+          sed -i -e 's~ENV_GAR_LOCATION~'"$GAR_LOCATION"'~g' base/dev/deployment.yaml
+          sed -i -e 's~ENV_REPOSITORY~'"$REPOSITORY"'~g' base/dev/deployment.yaml
+          sed -i -e 's~ENV_IMAGE~'"$IMAGE"'~g' base/dev/deployment.yaml
+          sed -i -e 's~ENV_PROJECT_ID~'"$PROJECT_ID"'~g' base/dev/deployment.yaml
+          sed -i -e 's~ENV_GITHUB_SHA~'"$GITHUB_SHA"'~g' base/dev/deployment.yaml
 
       - name: Deploy
         run: |-
-          ./kustomize build base/ | kubectl apply -f -
+          ./kustomize build base/dev | kubectl apply -f -
           kubectl rollout status deployment/renata-backend-api
           kubectl get services -o wide
