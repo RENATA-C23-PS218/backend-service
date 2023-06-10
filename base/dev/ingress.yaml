@@ -13,7 +13,7 @@ spec:
       port:
         number: 80
   rules:
-  - host: "renata-app.xyz"
+  - host: "dev.renata-app.xyz"
     http:
       paths:
       - path: /*
