@@ -40,9 +40,9 @@ jobs:
       - name: Docker configuration
         run: |-
           gcloud auth print-access-token \
-            --impersonate-service-account $PROD_SA | docker login \
+            --impersonate-service-account ${{ secrets.secrets.CI_CD_SERVICE_ACCOUNT_PROD }} | docker login \
             -u oauth2accesstoken \
-            --password-stdin https://$GAR_LOCATION-docker.pkg.dev
+            --password-stdin https://${{ secrets.GAR_LOCATION_PROD }}-docker.pkg.dev
 
       - name: Set up GKE credentials
         uses: google-github-actions/get-gke-credentials@v0
