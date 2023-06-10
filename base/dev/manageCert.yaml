@@ -4,5 +4,4 @@ metadata:
   name: renata-backend-api-certificate
 spec:
   domains:
-  - renata-app.xyz
-  - www.renata-app.xyz
+  - dev.renata-app.xyz
