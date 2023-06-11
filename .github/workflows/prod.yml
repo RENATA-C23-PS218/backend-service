@@ -1,4 +1,4 @@
-name: Build and Deploy Productin Service to GKE Cluster
+name: Build and Deploy Production Service to GKE Cluster
 
 on:
   push:
