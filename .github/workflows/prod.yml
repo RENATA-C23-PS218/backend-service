@@ -40,7 +40,7 @@ jobs:
       - name: Docker configuration
         run: |-
           gcloud auth print-access-token \
-            --impersonate-service-account ${{ secrets.secrets.CI_CD_SERVICE_ACCOUNT_PROD }} | docker login \
+            --impersonate-service-account ${{ secrets.CI_CD_SERVICE_ACCOUNT_PROD }} | docker login \
             -u oauth2accesstoken \
             --password-stdin https://${{ secrets.GAR_LOCATION_PROD }}-docker.pkg.dev
 
