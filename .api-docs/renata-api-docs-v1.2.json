@@ -1,0 +1,1186 @@
+{
+	"info": {
+		"_postman_id": "6f4d7d80-cf40-4274-9c78-b3fc566dae46",
+		"name": "Renata",
+		"description": "This is the Documentation for RENATA (Restorasi Tumbuhan dan Tanah) API Collection. This API Collectoin should be run using the bearer token",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27328314"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test response status\r",
+									"pm.test(\"Status code is 201 Created\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"// Test response body properties\r",
+									"pm.test(\"Response has 'status' property\", function () {\r",
+									"    pm.response.to.have.jsonBody('status');\r",
+									"});\r",
+									"pm.test(\"Response has 'message' property\", function () {\r",
+									"    pm.response.to.have.jsonBody('message');\r",
+									"});\r",
+									"pm.test(\"Response has 'success' property\", function () {\r",
+									"    pm.response.to.have.jsonBody('success');\r",
+									"});\r",
+									"pm.test(\"Response has 'data' property\", function () {\r",
+									"    pm.response.to.have.jsonBody('data');\r",
+									"});\r",
+									"\r",
+									"// Test specific property values\r",
+									"pm.test(\"Status is 201\", function () {\r",
+									"    pm.expect(pm.response.json().status).to.equal(201);\r",
+									"});\r",
+									"pm.test(\"Message is 'Register success'\", function () {\r",
+									"    pm.expect(pm.response.json().message).to.equal(\"Register success\");\r",
+									"});\r",
+									"pm.test(\"Success is true\", function () {\r",
+									"    pm.expect(pm.response.json().success).to.be.true;\r",
+									"});\r",
+									"pm.test(\"Data has 'id' property\", function () {\r",
+									"    pm.response.to.have.jsonBody('data.id');\r",
+									"});\r",
+									"pm.test(\"Data has 'email' property\", function () {\r",
+									"    pm.response.to.have.jsonBody('data.email');\r",
+									"});\r",
+									"\r",
+									"// Test email already used\r",
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Message is 'Email already used'\", function () {\r",
+									"    pm.expect(pm.response.json().message).to.equal(\"Email already used\");\r",
+									"});\r",
+									"pm.test(\"Success is false\", function () {\r",
+									"    pm.expect(pm.response.json().success).to.be.false;\r",
+									"});\r",
+									"pm.test(\"Data is null\", function () {\r",
+									"    pm.expect(pm.response.json().data).to.be.null;\r",
+									"});\r",
+									"\r",
+									"// Test invalid password\r",
+									"pm.test(\"Status code is 422\", function () {\r",
+									"    pm.response.to.have.status(422);\r",
+									"});\r",
+									"pm.test(\"Message is 'The given data was invalid.'\", function () {\r",
+									"    pm.expect(pm.response.json().message).to.equal(\"The given data was invalid.\");\r",
+									"});\r",
+									"pm.test(\"Success is false\", function () {\r",
+									"    pm.expect(pm.response.json().success).to.be.false;\r",
+									"});\r",
+									"pm.test(\"Errors contain 'password' field with specific message\", function () {\r",
+									"    pm.expect(pm.response.json().errors.password).to.equal(\"\\\"Password\\\" should contain at least 1 symbol\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dedensetyawan17@gmail.com\",\n    \"password\": \"Deden1712.!\",\n    \"confirmPassword\": \"Deden1712.!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"gricowijaya@gmail.com\",\n    \"password\": \"GedeRico1234!\",\n    \"confirmPassword\": \"GedeRico1234!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/register",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"75-QALVVyZWWi36fMOvQ1A2iSlkaAI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 02:39:53 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 google"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Register success\",\n    \"success\": true,\n    \"data\": {\n        \"id\": \"frHNvqkwtt\",\n        \"email\": \"gricowijaya@gmail.com\"\n    }\n}"
+						},
+						{
+							"name": "Register Failed, Email Already Used",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"gricowijaya@gmail.com\",\n    \"password\": \"GedeRico1234!\",\n    \"confirmPassword\": \"GedeRico1234!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/register",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-9WQ5zIQXL54Uwx9o9advuIDboG0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 02:40:42 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 google"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Email already used\",\n    \"success\": false,\n    \"data\": null\n}"
+						},
+						{
+							"name": "Register Failed, Should Contain One Symbol",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"ricoroach5@gmail.com\",\n    \"password\": \"GedeRico1234\",\n    \"confirmPassword\": \"GedeRico1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/register",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8c-GswzMAnvNZMrmtSxv57ILmVxm4s\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 02:41:27 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 google"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"password\": \"\\\"Password\\\" should contain at least 1 symbol\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"NPd-YOaAlC\",\n    \"otp\": 1664\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/verify",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"verify"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Verify Email Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"frHNvqkwtt\",\n    \"otp\": 8713\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/verify",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"verify"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "329"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"149-fGqm9fGmSCKpXP1P0Ge3ZCYjt/4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 02:44:01 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 google"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Email verifed, welcome\",\n    \"success\": true,\n    \"data\": {\n        \"id\": \"frHNvqkwtt\",\n        \"email\": \"gricowijaya@gmail.com\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZySE52cWt3dHQiLCJlbWFpbCI6ImdyaWNvd2lqYXlhQGdtYWlsLmNvbSIsImlhdCI6MTY4NTY3Mzg0MSwiZXhwIjoxNjg2Mjc4NjQxfQ.5TZg5oIaCFU8qozPuo6nNPdvO4ALP1MQIxlXse2halI\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"fUtRcXIboY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.101.55.104/api/resend-verification",
+							"protocol": "http",
+							"host": [
+								"34",
+								"101",
+								"55",
+								"104"
+							],
+							"path": [
+								"api",
+								"resend-verification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dedensetyawan17@gmail.com\",\n    \"password\": \"Deden171201.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dedensetyawan17@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/forgot-password",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dedensetyawan17@gmail.com\",\n    \"otp\": 8335\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/verify-reset-password",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"verify-reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dedensetyawan17@gmail.com\",\n    \"password\": \"DedenSetyawan17.!\",\n    \"confirmPassword\": \"DedenSetyawan17.!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/reset-password",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This is the Authentication module API"
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{server}}/api/profile",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Deden\",\r\n    \"last_name\": \"Setyawan\",\r\n    \"phone\": \"62132341351233\",\r\n    \"address\": \"Denpasar, Bali\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/profile",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Profile Picture",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/yandens/Downloads/Virtual_Background_Bangkit_2023.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/profile-image",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"profile-image"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/grico/Documents/Desktop-Hidden/compfest.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/profile-image",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"profile-image"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-67j2X3Ie5R/DfRXvI1eG/AW4qdw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 02:19:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Only support file png, jpeg, jpg\",\n    \"success\": false,\n    \"data\": null\n}"
+						},
+						{
+							"name": "200 Success Upload File",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/grico/Documents/Desktop-Hidden/photo_2023-02-05_00-47-42.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server}}/api/profile-image",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"profile-image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "165"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a5-ECqs5HMCwRqBqozHc8vUQp92G10\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 May 2023 02:28:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Upload success\",\n    \"success\": true,\n    \"data\": {\n        \"url\": \"https://storage.googleapis.com/profile-image-bucket-dev/1683772096920-HMM1vWYYH6CSzw3v.jpeg\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Plant",
+			"item": [
+				{
+					"name": "Plan Recommendations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "soilType",
+									"value": "humus",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/yandens/Downloads/Virtual_Background_Bangkit_2023.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/plant-recommendations",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"plant-recommendations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Plan Recommendations Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"soilType\": \"humus\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/plant-recommendations",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"plant-recommendations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7970"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f22-bWOQ75tL/7zk+H+eVraERY4zcjI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 04 Jun 2023 10:33:45 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 google"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success get plan recommendation!\",\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"VQfQpXfO8K\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Padi\",\n            \"createdAt\": \"2023-06-02T02:06:17.528Z\",\n            \"updatedAt\": \"2023-06-02T02:06:17.528Z\"\n        },\n        {\n            \"id\": \"SxUoIgd-_5\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Sawi\",\n            \"createdAt\": \"2023-06-02T02:06:17.671Z\",\n            \"updatedAt\": \"2023-06-02T02:06:17.671Z\"\n        },\n        {\n            \"id\": \"TPyZKX7DlR\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Bayam\",\n            \"createdAt\": \"2023-06-02T02:06:17.823Z\",\n            \"updatedAt\": \"2023-06-02T02:06:17.823Z\"\n        },\n        {\n            \"id\": \"CjDuOM5T_p\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Kangkung\",\n            \"createdAt\": \"2023-06-02T02:06:17.964Z\",\n            \"updatedAt\": \"2023-06-02T02:06:17.964Z\"\n        },\n        {\n            \"id\": \"nlG6j2siYG\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Andong\",\n            \"createdAt\": \"2023-06-02T02:06:18.170Z\",\n            \"updatedAt\": \"2023-06-02T02:06:18.170Z\"\n        },\n        {\n            \"id\": \"1KEIp6YZof\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Nanas\",\n            \"createdAt\": \"2023-06-02T02:06:18.317Z\",\n            \"updatedAt\": \"2023-06-02T02:06:18.317Z\"\n        },\n        {\n            \"id\": \"DRRXOs9RYn\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Kelapa\",\n            \"createdAt\": \"2023-06-02T02:06:18.470Z\",\n            \"updatedAt\": \"2023-06-02T02:06:18.470Z\"\n        },\n        {\n            \"id\": \"Bg7dno_4hj\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Tomat\",\n            \"createdAt\": \"2023-06-02T02:06:18.672Z\",\n            \"updatedAt\": \"2023-06-02T02:06:18.672Z\"\n        },\n        {\n            \"id\": \"P5X_S7Jwms\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Paprika\",\n            \"createdAt\": \"2023-06-02T02:06:19.054Z\",\n            \"updatedAt\": \"2023-06-02T02:06:19.054Z\"\n        },\n        {\n            \"id\": \"gzOV39hAtz\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Mentimun\",\n            \"createdAt\": \"2023-06-02T02:06:19.388Z\",\n            \"updatedAt\": \"2023-06-02T02:06:19.388Z\"\n        },\n        {\n            \"id\": \"oNRh52PGVT\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Zucchini\",\n            \"createdAt\": \"2023-06-02T02:06:19.640Z\",\n            \"updatedAt\": \"2023-06-02T02:06:19.640Z\"\n        },\n        {\n            \"id\": \"uEC-UcSrFx\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Terong\",\n            \"createdAt\": \"2023-06-02T02:06:19.885Z\",\n            \"updatedAt\": \"2023-06-02T02:06:19.885Z\"\n        },\n        {\n            \"id\": \"G2fbzVZQwY\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Kacang-kacangan (seperti kacang hijau atau kacang buncis)\",\n            \"createdAt\": \"2023-06-02T02:06:20.082Z\",\n            \"updatedAt\": \"2023-06-02T02:06:20.082Z\"\n        },\n        {\n            \"id\": \"2nVQVnjuxA\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Selada\",\n            \"createdAt\": \"2023-06-02T02:06:20.246Z\",\n            \"updatedAt\": \"2023-06-02T02:06:20.246Z\"\n        },\n        {\n            \"id\": \"ZO-AFt3TzZ\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Bayam\",\n            \"createdAt\": \"2023-06-02T02:06:20.390Z\",\n            \"updatedAt\": \"2023-06-02T02:06:20.390Z\"\n        },\n        {\n            \"id\": \"JWFaOXlvW5\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Kale\",\n            \"createdAt\": \"2023-06-02T02:06:20.575Z\",\n            \"updatedAt\": \"2023-06-02T02:06:20.575Z\"\n        },\n        {\n            \"id\": \"NBjh0yCGz7\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Kubis\",\n            \"createdAt\": \"2023-06-02T02:06:20.733Z\",\n            \"updatedAt\": \"2023-06-02T02:06:20.733Z\"\n        },\n        {\n            \"id\": \"ezjy_0uHgX\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Pohon apel\",\n            \"createdAt\": \"2023-06-02T02:06:20.893Z\",\n            \"updatedAt\": \"2023-06-02T02:06:20.893Z\"\n        },\n        {\n            \"id\": \"4dyNcqgcko\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Pohon pir\",\n            \"createdAt\": \"2023-06-02T02:06:21.045Z\",\n            \"updatedAt\": \"2023-06-02T02:06:21.045Z\"\n        },\n        {\n            \"id\": \"sTCCDpPqal\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Pohon plum\",\n            \"createdAt\": \"2023-06-02T02:06:21.216Z\",\n            \"updatedAt\": \"2023-06-02T02:06:21.216Z\"\n        },\n        {\n            \"id\": \"qnxAUZkhsQ\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Pohon ceri\",\n            \"createdAt\": \"2023-06-02T02:06:21.380Z\",\n            \"updatedAt\": \"2023-06-02T02:06:21.380Z\"\n        },\n        {\n            \"id\": \"mY0ExmF5wW\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Semak-semak blueberry\",\n            \"createdAt\": \"2023-06-02T02:06:21.512Z\",\n            \"updatedAt\": \"2023-06-02T02:06:21.512Z\"\n        },\n        {\n            \"id\": \"yQODenc8Z7\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Semak-semak raspberry\",\n            \"createdAt\": \"2023-06-02T02:06:21.673Z\",\n            \"updatedAt\": \"2023-06-02T02:06:21.673Z\"\n        },\n        {\n            \"id\": \"85MkKydoss\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Tanaman stroberi\",\n            \"createdAt\": \"2023-06-02T02:06:21.838Z\",\n            \"updatedAt\": \"2023-06-02T02:06:21.838Z\"\n        },\n        {\n            \"id\": \"a1E2jR4_nA\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Semak-semak blackberry\",\n            \"createdAt\": \"2023-06-02T02:06:22.009Z\",\n            \"updatedAt\": \"2023-06-02T02:06:22.009Z\"\n        },\n        {\n            \"id\": \"hyTEsQbuZS\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Pohon ara\",\n            \"createdAt\": \"2023-06-02T02:06:22.167Z\",\n            \"updatedAt\": \"2023-06-02T02:06:22.167Z\"\n        },\n        {\n            \"id\": \"9zpADNfUkP\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Wortel\",\n            \"createdAt\": \"2023-06-02T02:06:22.319Z\",\n            \"updatedAt\": \"2023-06-02T02:06:22.319Z\"\n        },\n        {\n            \"id\": \"OM5NVDU_GT\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Kentang\",\n            \"createdAt\": \"2023-06-02T02:06:22.517Z\",\n            \"updatedAt\": \"2023-06-02T02:06:22.517Z\"\n        },\n        {\n            \"id\": \"6vys8OeJuT\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Ubi jalar\",\n            \"createdAt\": \"2023-06-02T02:06:22.860Z\",\n            \"updatedAt\": \"2023-06-02T02:06:22.860Z\"\n        },\n        {\n            \"id\": \"fdCdgoPn4V\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Bit\",\n            \"createdAt\": \"2023-06-02T02:06:23.031Z\",\n            \"updatedAt\": \"2023-06-02T02:06:23.031Z\"\n        },\n        {\n            \"id\": \"Gf67L3l_DX\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Lobak\",\n            \"createdAt\": \"2023-06-02T02:06:23.208Z\",\n            \"updatedAt\": \"2023-06-02T02:06:23.208Z\"\n        },\n        {\n            \"id\": \"4IxS83A9JI\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Lobak\",\n            \"createdAt\": \"2023-06-02T02:06:23.370Z\",\n            \"updatedAt\": \"2023-06-02T02:06:23.370Z\"\n        },\n        {\n            \"id\": \"slXE2V_0f0\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Bayam\",\n            \"createdAt\": \"2023-06-02T02:06:23.565Z\",\n            \"updatedAt\": \"2023-06-02T02:06:23.565Z\"\n        },\n        {\n            \"id\": \"BY--DIJ34-\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Lobak Swiss\",\n            \"createdAt\": \"2023-06-02T02:06:23.751Z\",\n            \"updatedAt\": \"2023-06-02T02:06:23.751Z\"\n        },\n        {\n            \"id\": \"T7xuxmDl--\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Basil\",\n            \"createdAt\": \"2023-06-02T02:06:23.950Z\",\n            \"updatedAt\": \"2023-06-02T02:06:23.950Z\"\n        },\n        {\n            \"id\": \"hHzy5t6Vph\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Peterseli\",\n            \"createdAt\": \"2023-06-02T02:06:24.119Z\",\n            \"updatedAt\": \"2023-06-02T02:06:24.119Z\"\n        },\n        {\n            \"id\": \"ZnvNRH-OpC\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Ketumbar\",\n            \"createdAt\": \"2023-06-02T02:06:24.351Z\",\n            \"updatedAt\": \"2023-06-02T02:06:24.351Z\"\n        },\n        {\n            \"id\": \"hs4IeOy7XP\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Dill\",\n            \"createdAt\": \"2023-06-02T02:06:24.567Z\",\n            \"updatedAt\": \"2023-06-02T02:06:24.567Z\"\n        },\n        {\n            \"id\": \"JzBHaSgAAF\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Mint\",\n            \"createdAt\": \"2023-06-02T02:06:24.741Z\",\n            \"updatedAt\": \"2023-06-02T02:06:24.741Z\"\n        },\n        {\n            \"id\": \"U8TSODVlkH\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Kacang polong\",\n            \"createdAt\": \"2023-06-02T02:06:25.007Z\",\n            \"updatedAt\": \"2023-06-02T02:06:25.007Z\"\n        },\n        {\n            \"id\": \"duKAx7SyOY\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Kacang-kacangan (seperti kacang merah, kacang pinto, atau kacang hitam)\",\n            \"createdAt\": \"2023-06-02T02:06:25.226Z\",\n            \"updatedAt\": \"2023-06-02T02:06:25.226Z\"\n        },\n        {\n            \"id\": \"VpzqsqT5fj\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Lentil\",\n            \"createdAt\": \"2023-06-02T02:06:25.363Z\",\n            \"updatedAt\": \"2023-06-02T02:06:25.363Z\"\n        },\n        {\n            \"id\": \"hq9zWx4nV8\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Mawar\",\n            \"createdAt\": \"2023-06-02T02:06:25.512Z\",\n            \"updatedAt\": \"2023-06-02T02:06:25.512Z\"\n        },\n        {\n            \"id\": \"NGL8m-P162\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Bunga matahari\",\n            \"createdAt\": \"2023-06-02T02:06:25.674Z\",\n            \"updatedAt\": \"2023-06-02T02:06:25.674Z\"\n        },\n        {\n            \"id\": \"PV1jkALlPM\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Marigold\",\n            \"createdAt\": \"2023-06-02T02:06:25.822Z\",\n            \"updatedAt\": \"2023-06-02T02:06:25.822Z\"\n        },\n        {\n            \"id\": \"Hkz7hlLLJf\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Dahlia\",\n            \"createdAt\": \"2023-06-02T02:06:25.990Z\",\n            \"updatedAt\": \"2023-06-02T02:06:25.990Z\"\n        },\n        {\n            \"id\": \"uSn9cZeOK4\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Zinnias\",\n            \"createdAt\": \"2023-06-02T02:06:26.175Z\",\n            \"updatedAt\": \"2023-06-02T02:06:26.175Z\"\n        },\n        {\n            \"id\": \"06TW5NeVLG\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Geranium\",\n            \"createdAt\": \"2023-06-02T02:06:26.368Z\",\n            \"updatedAt\": \"2023-06-02T02:06:26.368Z\"\n        },\n        {\n            \"id\": \"e0PGKPjtwT\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Gandum\",\n            \"createdAt\": \"2023-06-02T02:06:26.588Z\",\n            \"updatedAt\": \"2023-06-02T02:06:26.588Z\"\n        },\n        {\n            \"id\": \"-GpdOCB2kZ\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Jelai\",\n            \"createdAt\": \"2023-06-02T02:06:26.849Z\",\n            \"updatedAt\": \"2023-06-02T02:06:26.849Z\"\n        },\n        {\n            \"id\": \"7h3uU2bbJj\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Gandum\",\n            \"createdAt\": \"2023-06-02T02:06:27.106Z\",\n            \"updatedAt\": \"2023-06-02T02:06:27.106Z\"\n        },\n        {\n            \"id\": \"D6ea_wLdj1\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Rye\",\n            \"createdAt\": \"2023-06-02T02:06:27.260Z\",\n            \"updatedAt\": \"2023-06-02T02:06:27.260Z\"\n        },\n        {\n            \"id\": \"SkxWUkoORt\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Semanggi\",\n            \"createdAt\": \"2023-06-02T02:06:27.462Z\",\n            \"updatedAt\": \"2023-06-02T02:06:27.462Z\"\n        },\n        {\n            \"id\": \"C4q-Fg61Lv\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Alfalfa\",\n            \"createdAt\": \"2023-06-02T02:06:27.662Z\",\n            \"updatedAt\": \"2023-06-02T02:06:27.662Z\"\n        },\n        {\n            \"id\": \"Mh0i9u6vqn\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Soba\",\n            \"createdAt\": \"2023-06-02T02:06:27.860Z\",\n            \"updatedAt\": \"2023-06-02T02:06:27.860Z\"\n        },\n        {\n            \"id\": \"V5isPGHpv3\",\n            \"soil_id\": \"ralgK9vURr\",\n            \"name\": \"Rye musim dingin\",\n            \"createdAt\": \"2023-06-02T02:06:28.079Z\",\n            \"updatedAt\": \"2023-06-02T02:06:28.079Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Scan Histories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/scan-histories",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"scan-histories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Scan Histories Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/scan-histories",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"scan-histories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ad-6ucOpU6kYcsrdXnavV4CL2pVMCM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 04 Jun 2023 10:33:18 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 google"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success get history!\",\n    \"success\": true,\n    \"data\": {\n        \"user_id\": \"dUTwTcP5JF\",\n        \"scanHistories\": [\n            {\n                \"soil_type\": \"Humus\",\n                \"date_scan\": \"2023-06-02T03:51:15.835Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "History Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/api/history-detail/ZxuMDqicba",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"history-detail",
+								"ZxuMDqicba"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "History Detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/history-detail/juQzS3p0t5",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"history-detail",
+										"juQzS3p0t5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "978"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d2-rNwS3cX2QAFb+ggI5vDGH2uPPMY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Jun 2023 10:21:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success get detail history\",\n    \"success\": true,\n    \"data\": {\n        \"soil_type\": \"Humus\",\n        \"soil_image\": \"https://storage.googleapis.com/renata-dev-soil/1685974454381-DlCyWC1H1ePSn-dW.png\",\n        \"plant_recommendations\": [\n            \"Padi\",\n            \"Sawi\",\n            \"Bayam\",\n            \"Kangkung\",\n            \"Andong\",\n            \"Nanas\",\n            \"Kelapa\",\n            \"Tomat\",\n            \"Paprika\",\n            \"Mentimun\",\n            \"Zucchini\",\n            \"Terong\",\n            \"Kacang-kacangan (seperti kacang hijau atau kacang buncis)\",\n            \"Selada\",\n            \"Bayam\",\n            \"Kale\",\n            \"Kubis\",\n            \"Pohon apel\",\n            \"Pohon pir\",\n            \"Pohon plum\",\n            \"Pohon ceri\",\n            \"Semak-semak blueberry\",\n            \"Semak-semak raspberry\",\n            \"Tanaman stroberi\",\n            \"Semak-semak blackberry\",\n            \"Pohon ara\",\n            \"Wortel\",\n            \"Kentang\",\n            \"Ubi jalar\",\n            \"Bit\",\n            \"Lobak\",\n            \"Lobak\",\n            \"Bayam\",\n            \"Lobak Swiss\",\n            \"Basil\",\n            \"Peterseli\",\n            \"Ketumbar\",\n            \"Dill\",\n            \"Mint\",\n            \"Kacang polong\",\n            \"Kacang-kacangan (seperti kacang merah, kacang pinto, atau kacang hitam)\",\n            \"Lentil\",\n            \"Mawar\",\n            \"Bunga matahari\",\n            \"Marigold\",\n            \"Dahlia\",\n            \"Zinnias\",\n            \"Geranium\",\n            \"Gandum\",\n            \"Jelai\",\n            \"Gandum\",\n            \"Rye\",\n            \"Semanggi\",\n            \"Alfalfa\",\n            \"Soba\",\n            \"Rye musim dingin\"\n        ],\n        \"date_scan\": \"2023-06-05T14:14:15.888Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Growing Plants",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plant\": \"lettuce\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/predict",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"predict"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Growing Plants",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"soil\": \"laterit\",\r\n    \"plant\": \"lettuce\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/predict",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"predict"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.3.6 Python/3.9.16"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Jun 2023 15:43:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "919"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"To plant lettuce in laterite soil, you will need:\\n\\n* Lettuce seeds\\n* A shovel\\n* A trowel\\n* Compost or manure\\n* Water\\n\\n1. Prepare the soil by tilling it and adding compost or manure.\\n2. Sow the lettuce seeds in rows, spacing them 1 inch apart.\\n3. Cover the seeds with soil and water them thoroughly.\\n4. Keep the soil moist until the seeds germinate.\\n5. Thin the seedlings to 2 inches apart once they have grown their first true leaves.\\n6. Water the lettuce regularly, especially during dry periods.\\n7. Fertilize the lettuce every two weeks with a water-soluble fertilizer.\\n8. Harvest the lettuce when the leaves are large enough to eat.\\n\\nHere are some tips for growing lettuce in laterite soil:\\n\\n* Choose a variety of lettuce that is suited for your climate.\\n* Plant lettuce in full sun or partial shade.\\n\",\n    \"message\": \"Successfully Get Growing Plant Prediction\",\n    \"status\": 200,\n    \"success\": true\n}"
+						},
+						{
+							"name": "Growing Plants Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"plant\": \"lettuce\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/predict",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"predict"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.3.6 Python/3.9.17"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Jun 2023 19:05:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 google"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"message\": \"Bad Request, provide the right body to get the steps\",\n    \"status\": 400,\n    \"success\": false\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IndhWV9nMUwyM3giLCJlbWFpbCI6ImRlZGVuc2V0eWF3YW4xN0BnbWFpbC5jb20iLCJpYXQiOjE2ODYyMzQxMzEsImV4cCI6MTY4NjgzODkzMX0.kevUK-cRywNKpxraEDDVQYe4Qrjl62jNg9NluM9YmCE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "http://localhost:3000"
+		}
+	]
+}
