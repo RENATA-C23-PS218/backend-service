@@ -5,8 +5,10 @@ info:
     This is the Documentation for RENATA (Restorasi Tumbuhan dan Tanah) API Collection. This API Collectoin should be run using the bearer token
   version: 1.0.0
 servers:
-- url: http://{{server}}
-- url: http://34.101.55.104
+- url: https://renata-app.xyz
+  description: Production server
+- url: https://dev.renata-app.xyz
+  description: Remote Development server
 components:
   securitySchemes:
     bearerAuth:
