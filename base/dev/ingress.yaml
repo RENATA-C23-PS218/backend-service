@@ -23,3 +23,17 @@ spec:
             name: renata-backend-api-service
             port:
               number: 80
+      - path: /api/predict
+        pathType: Prefix
+        backend:
+          service:
+            name: renata-growing-plants-api-service
+            port:
+              number: 81
+      - path: /api/growing-plants-service
+        pathType: Prefix
+        backend:
+          service:
+            name: renata-growing-plants-api-service
+            port:
+              number: 81
