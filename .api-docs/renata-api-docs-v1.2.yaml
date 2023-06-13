@@ -1,0 +1,1066 @@
+openapi: 3.0.0
+info:
+  title: Renata
+  description: >-
+    This is the Documentation for RENATA (Restorasi Tumbuhan dan Tanah) API Collection. This API Collectoin should be run using the bearer token
+  version: 1.0.0
+servers:
+- url: https://renata-app.xyz
+  description: Production server
+- url: https://dev.renata-app.xyz
+  description: Remote Development server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+- bearerAuth: []
+tags:
+- name: Auth
+  description: This is the Authentication module API
+- name: Profile
+- name: Plant
+paths:
+  /api/register:
+    post:
+      tags:
+      - Auth
+      summary: Register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: dedensetyawan17@gmail.com
+                password: Deden1712.!
+                confirmPassword: Deden1712.!
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '117'
+            ETag:
+              schema:
+                type: string
+                example: W/"75-QALVVyZWWi36fMOvQ1A2iSlkaAI"
+            Date:
+              schema:
+                type: string
+                example: Fri, 02 Jun 2023 02:39:53 GMT
+            Via:
+              schema:
+                type: string
+                example: 1.1 google
+            Alt-Svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 201
+                message: Register success
+                success: true
+                data:
+                  id: frHNvqkwtt
+                  email: gricowijaya@gmail.com
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '73'
+            ETag:
+              schema:
+                type: string
+                example: W/"49-9WQ5zIQXL54Uwx9o9advuIDboG0"
+            Date:
+              schema:
+                type: string
+                example: Fri, 02 Jun 2023 02:40:42 GMT
+            Via:
+              schema:
+                type: string
+                example: 1.1 google
+            Alt-Svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 400
+                message: Email already used
+                success: false
+                data: null
+        '422':
+          description: Unprocessable Entity
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '140'
+            ETag:
+              schema:
+                type: string
+                example: W/"8c-GswzMAnvNZMrmtSxv57ILmVxm4s"
+            Date:
+              schema:
+                type: string
+                example: Fri, 02 Jun 2023 02:41:27 GMT
+            Via:
+              schema:
+                type: string
+                example: 1.1 google
+            Alt-Svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 422
+                success: false
+                message: The given data was invalid.
+                errors:
+                  password: '"Password" should contain at least 1 symbol'
+  /api/verify:
+    post:
+      tags:
+      - Auth
+      summary: Verify Email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: NPd-YOaAlC
+                otp: 1664
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '329'
+            ETag:
+              schema:
+                type: string
+                example: W/"149-fGqm9fGmSCKpXP1P0Ge3ZCYjt/4"
+            Date:
+              schema:
+                type: string
+                example: Fri, 02 Jun 2023 02:44:01 GMT
+            Via:
+              schema:
+                type: string
+                example: 1.1 google
+            Alt-Svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 200
+                message: Email verifed, welcome
+                success: true
+                data:
+                  id: frHNvqkwtt
+                  email: gricowijaya@gmail.com
+                  token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZySE52cWt3dHQiLCJlbWFpbCI6ImdyaWNvd2lqYXlhQGdtYWlsLmNvbSIsImlhdCI6MTY4NTY3Mzg0MSwiZXhwIjoxNjg2Mjc4NjQxfQ.5TZg5oIaCFU8qozPuo6nNPdvO4ALP1MQIxlXse2halI
+  /api/resend-verification:
+    post:
+      tags:
+      - Auth
+      summary: Resend OTP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: fUtRcXIboY
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/login:
+    post:
+      tags:
+      - Auth
+      summary: Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: dedensetyawan17@gmail.com
+                password: Deden171201.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/forgot-password:
+    post:
+      tags:
+      - Auth
+      summary: Forgot Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: dedensetyawan17@gmail.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/verify-reset-password:
+    post:
+      tags:
+      - Auth
+      summary: Verify Reset Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: dedensetyawan17@gmail.com
+                otp: 8335
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/reset-password:
+    put:
+      tags:
+      - Auth
+      summary: Reset Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: dedensetyawan17@gmail.com
+                password: DedenSetyawan17.!
+                confirmPassword: DedenSetyawan17.!
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/profile:
+    get:
+      tags:
+      - Profile
+      summary: Get Profile
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+      - Profile
+      summary: Update Profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: Deden
+                last_name: Setyawan
+                phone: '62132341351233'
+                address: Denpasar, Bali
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/profile-image:
+    post:
+      tags:
+      - Profile
+      summary: Upload Profile Picture
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '165'
+            ETag:
+              schema:
+                type: string
+                example: W/"a5-ECqs5HMCwRqBqozHc8vUQp92G10"
+            Date:
+              schema:
+                type: string
+                example: Thu, 11 May 2023 02:28:18 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 200
+                message: Upload success
+                success: true
+                data:
+                  url: >-
+                    https://storage.googleapis.com/profile-image-bucket-dev/1683772096920-HMM1vWYYH6CSzw3v.jpeg
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '87'
+            ETag:
+              schema:
+                type: string
+                example: W/"57-67j2X3Ie5R/DfRXvI1eG/AW4qdw"
+            Date:
+              schema:
+                type: string
+                example: Thu, 11 May 2023 02:19:58 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 400
+                message: Only support file png, jpeg, jpg
+                success: false
+                data: null
+  /api/plant-recommendations:
+    post:
+      tags:
+      - Plant
+      summary: Plan Recommendations
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                soilType:
+                  type: string
+                  example: humus
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '7970'
+            ETag:
+              schema:
+                type: string
+                example: W/"1f22-bWOQ75tL/7zk+H+eVraERY4zcjI"
+            Date:
+              schema:
+                type: string
+                example: Sun, 04 Jun 2023 10:33:45 GMT
+            Via:
+              schema:
+                type: string
+                example: 1.1 google
+            Alt-Svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 200
+                message: Success get plan recommendation!
+                success: true
+                data:
+                - id: VQfQpXfO8K
+                  soil_id: ralgK9vURr
+                  name: Padi
+                  createdAt: '2023-06-02T02:06:17.528Z'
+                  updatedAt: '2023-06-02T02:06:17.528Z'
+                - id: SxUoIgd-_5
+                  soil_id: ralgK9vURr
+                  name: Sawi
+                  createdAt: '2023-06-02T02:06:17.671Z'
+                  updatedAt: '2023-06-02T02:06:17.671Z'
+                - id: TPyZKX7DlR
+                  soil_id: ralgK9vURr
+                  name: Bayam
+                  createdAt: '2023-06-02T02:06:17.823Z'
+                  updatedAt: '2023-06-02T02:06:17.823Z'
+                - id: CjDuOM5T_p
+                  soil_id: ralgK9vURr
+                  name: Kangkung
+                  createdAt: '2023-06-02T02:06:17.964Z'
+                  updatedAt: '2023-06-02T02:06:17.964Z'
+                - id: nlG6j2siYG
+                  soil_id: ralgK9vURr
+                  name: Andong
+                  createdAt: '2023-06-02T02:06:18.170Z'
+                  updatedAt: '2023-06-02T02:06:18.170Z'
+                - id: 1KEIp6YZof
+                  soil_id: ralgK9vURr
+                  name: Nanas
+                  createdAt: '2023-06-02T02:06:18.317Z'
+                  updatedAt: '2023-06-02T02:06:18.317Z'
+                - id: DRRXOs9RYn
+                  soil_id: ralgK9vURr
+                  name: Kelapa
+                  createdAt: '2023-06-02T02:06:18.470Z'
+                  updatedAt: '2023-06-02T02:06:18.470Z'
+                - id: Bg7dno_4hj
+                  soil_id: ralgK9vURr
+                  name: Tomat
+                  createdAt: '2023-06-02T02:06:18.672Z'
+                  updatedAt: '2023-06-02T02:06:18.672Z'
+                - id: P5X_S7Jwms
+                  soil_id: ralgK9vURr
+                  name: Paprika
+                  createdAt: '2023-06-02T02:06:19.054Z'
+                  updatedAt: '2023-06-02T02:06:19.054Z'
+                - id: gzOV39hAtz
+                  soil_id: ralgK9vURr
+                  name: Mentimun
+                  createdAt: '2023-06-02T02:06:19.388Z'
+                  updatedAt: '2023-06-02T02:06:19.388Z'
+                - id: oNRh52PGVT
+                  soil_id: ralgK9vURr
+                  name: Zucchini
+                  createdAt: '2023-06-02T02:06:19.640Z'
+                  updatedAt: '2023-06-02T02:06:19.640Z'
+                - id: uEC-UcSrFx
+                  soil_id: ralgK9vURr
+                  name: Terong
+                  createdAt: '2023-06-02T02:06:19.885Z'
+                  updatedAt: '2023-06-02T02:06:19.885Z'
+                - id: G2fbzVZQwY
+                  soil_id: ralgK9vURr
+                  name: Kacang-kacangan (seperti kacang hijau atau kacang buncis)
+                  createdAt: '2023-06-02T02:06:20.082Z'
+                  updatedAt: '2023-06-02T02:06:20.082Z'
+                - id: 2nVQVnjuxA
+                  soil_id: ralgK9vURr
+                  name: Selada
+                  createdAt: '2023-06-02T02:06:20.246Z'
+                  updatedAt: '2023-06-02T02:06:20.246Z'
+                - id: ZO-AFt3TzZ
+                  soil_id: ralgK9vURr
+                  name: Bayam
+                  createdAt: '2023-06-02T02:06:20.390Z'
+                  updatedAt: '2023-06-02T02:06:20.390Z'
+                - id: JWFaOXlvW5
+                  soil_id: ralgK9vURr
+                  name: Kale
+                  createdAt: '2023-06-02T02:06:20.575Z'
+                  updatedAt: '2023-06-02T02:06:20.575Z'
+                - id: NBjh0yCGz7
+                  soil_id: ralgK9vURr
+                  name: Kubis
+                  createdAt: '2023-06-02T02:06:20.733Z'
+                  updatedAt: '2023-06-02T02:06:20.733Z'
+                - id: ezjy_0uHgX
+                  soil_id: ralgK9vURr
+                  name: Pohon apel
+                  createdAt: '2023-06-02T02:06:20.893Z'
+                  updatedAt: '2023-06-02T02:06:20.893Z'
+                - id: 4dyNcqgcko
+                  soil_id: ralgK9vURr
+                  name: Pohon pir
+                  createdAt: '2023-06-02T02:06:21.045Z'
+                  updatedAt: '2023-06-02T02:06:21.045Z'
+                - id: sTCCDpPqal
+                  soil_id: ralgK9vURr
+                  name: Pohon plum
+                  createdAt: '2023-06-02T02:06:21.216Z'
+                  updatedAt: '2023-06-02T02:06:21.216Z'
+                - id: qnxAUZkhsQ
+                  soil_id: ralgK9vURr
+                  name: Pohon ceri
+                  createdAt: '2023-06-02T02:06:21.380Z'
+                  updatedAt: '2023-06-02T02:06:21.380Z'
+                - id: mY0ExmF5wW
+                  soil_id: ralgK9vURr
+                  name: Semak-semak blueberry
+                  createdAt: '2023-06-02T02:06:21.512Z'
+                  updatedAt: '2023-06-02T02:06:21.512Z'
+                - id: yQODenc8Z7
+                  soil_id: ralgK9vURr
+                  name: Semak-semak raspberry
+                  createdAt: '2023-06-02T02:06:21.673Z'
+                  updatedAt: '2023-06-02T02:06:21.673Z'
+                - id: 85MkKydoss
+                  soil_id: ralgK9vURr
+                  name: Tanaman stroberi
+                  createdAt: '2023-06-02T02:06:21.838Z'
+                  updatedAt: '2023-06-02T02:06:21.838Z'
+                - id: a1E2jR4_nA
+                  soil_id: ralgK9vURr
+                  name: Semak-semak blackberry
+                  createdAt: '2023-06-02T02:06:22.009Z'
+                  updatedAt: '2023-06-02T02:06:22.009Z'
+                - id: hyTEsQbuZS
+                  soil_id: ralgK9vURr
+                  name: Pohon ara
+                  createdAt: '2023-06-02T02:06:22.167Z'
+                  updatedAt: '2023-06-02T02:06:22.167Z'
+                - id: 9zpADNfUkP
+                  soil_id: ralgK9vURr
+                  name: Wortel
+                  createdAt: '2023-06-02T02:06:22.319Z'
+                  updatedAt: '2023-06-02T02:06:22.319Z'
+                - id: OM5NVDU_GT
+                  soil_id: ralgK9vURr
+                  name: Kentang
+                  createdAt: '2023-06-02T02:06:22.517Z'
+                  updatedAt: '2023-06-02T02:06:22.517Z'
+                - id: 6vys8OeJuT
+                  soil_id: ralgK9vURr
+                  name: Ubi jalar
+                  createdAt: '2023-06-02T02:06:22.860Z'
+                  updatedAt: '2023-06-02T02:06:22.860Z'
+                - id: fdCdgoPn4V
+                  soil_id: ralgK9vURr
+                  name: Bit
+                  createdAt: '2023-06-02T02:06:23.031Z'
+                  updatedAt: '2023-06-02T02:06:23.031Z'
+                - id: Gf67L3l_DX
+                  soil_id: ralgK9vURr
+                  name: Lobak
+                  createdAt: '2023-06-02T02:06:23.208Z'
+                  updatedAt: '2023-06-02T02:06:23.208Z'
+                - id: 4IxS83A9JI
+                  soil_id: ralgK9vURr
+                  name: Lobak
+                  createdAt: '2023-06-02T02:06:23.370Z'
+                  updatedAt: '2023-06-02T02:06:23.370Z'
+                - id: slXE2V_0f0
+                  soil_id: ralgK9vURr
+                  name: Bayam
+                  createdAt: '2023-06-02T02:06:23.565Z'
+                  updatedAt: '2023-06-02T02:06:23.565Z'
+                - id: BY--DIJ34-
+                  soil_id: ralgK9vURr
+                  name: Lobak Swiss
+                  createdAt: '2023-06-02T02:06:23.751Z'
+                  updatedAt: '2023-06-02T02:06:23.751Z'
+                - id: T7xuxmDl--
+                  soil_id: ralgK9vURr
+                  name: Basil
+                  createdAt: '2023-06-02T02:06:23.950Z'
+                  updatedAt: '2023-06-02T02:06:23.950Z'
+                - id: hHzy5t6Vph
+                  soil_id: ralgK9vURr
+                  name: Peterseli
+                  createdAt: '2023-06-02T02:06:24.119Z'
+                  updatedAt: '2023-06-02T02:06:24.119Z'
+                - id: ZnvNRH-OpC
+                  soil_id: ralgK9vURr
+                  name: Ketumbar
+                  createdAt: '2023-06-02T02:06:24.351Z'
+                  updatedAt: '2023-06-02T02:06:24.351Z'
+                - id: hs4IeOy7XP
+                  soil_id: ralgK9vURr
+                  name: Dill
+                  createdAt: '2023-06-02T02:06:24.567Z'
+                  updatedAt: '2023-06-02T02:06:24.567Z'
+                - id: JzBHaSgAAF
+                  soil_id: ralgK9vURr
+                  name: Mint
+                  createdAt: '2023-06-02T02:06:24.741Z'
+                  updatedAt: '2023-06-02T02:06:24.741Z'
+                - id: U8TSODVlkH
+                  soil_id: ralgK9vURr
+                  name: Kacang polong
+                  createdAt: '2023-06-02T02:06:25.007Z'
+                  updatedAt: '2023-06-02T02:06:25.007Z'
+                - id: duKAx7SyOY
+                  soil_id: ralgK9vURr
+                  name: >-
+                    Kacang-kacangan (seperti kacang merah, kacang pinto, atau kacang hitam)
+                  createdAt: '2023-06-02T02:06:25.226Z'
+                  updatedAt: '2023-06-02T02:06:25.226Z'
+                - id: VpzqsqT5fj
+                  soil_id: ralgK9vURr
+                  name: Lentil
+                  createdAt: '2023-06-02T02:06:25.363Z'
+                  updatedAt: '2023-06-02T02:06:25.363Z'
+                - id: hq9zWx4nV8
+                  soil_id: ralgK9vURr
+                  name: Mawar
+                  createdAt: '2023-06-02T02:06:25.512Z'
+                  updatedAt: '2023-06-02T02:06:25.512Z'
+                - id: NGL8m-P162
+                  soil_id: ralgK9vURr
+                  name: Bunga matahari
+                  createdAt: '2023-06-02T02:06:25.674Z'
+                  updatedAt: '2023-06-02T02:06:25.674Z'
+                - id: PV1jkALlPM
+                  soil_id: ralgK9vURr
+                  name: Marigold
+                  createdAt: '2023-06-02T02:06:25.822Z'
+                  updatedAt: '2023-06-02T02:06:25.822Z'
+                - id: Hkz7hlLLJf
+                  soil_id: ralgK9vURr
+                  name: Dahlia
+                  createdAt: '2023-06-02T02:06:25.990Z'
+                  updatedAt: '2023-06-02T02:06:25.990Z'
+                - id: uSn9cZeOK4
+                  soil_id: ralgK9vURr
+                  name: Zinnias
+                  createdAt: '2023-06-02T02:06:26.175Z'
+                  updatedAt: '2023-06-02T02:06:26.175Z'
+                - id: 06TW5NeVLG
+                  soil_id: ralgK9vURr
+                  name: Geranium
+                  createdAt: '2023-06-02T02:06:26.368Z'
+                  updatedAt: '2023-06-02T02:06:26.368Z'
+                - id: e0PGKPjtwT
+                  soil_id: ralgK9vURr
+                  name: Gandum
+                  createdAt: '2023-06-02T02:06:26.588Z'
+                  updatedAt: '2023-06-02T02:06:26.588Z'
+                - id: '-GpdOCB2kZ'
+                  soil_id: ralgK9vURr
+                  name: Jelai
+                  createdAt: '2023-06-02T02:06:26.849Z'
+                  updatedAt: '2023-06-02T02:06:26.849Z'
+                - id: 7h3uU2bbJj
+                  soil_id: ralgK9vURr
+                  name: Gandum
+                  createdAt: '2023-06-02T02:06:27.106Z'
+                  updatedAt: '2023-06-02T02:06:27.106Z'
+                - id: D6ea_wLdj1
+                  soil_id: ralgK9vURr
+                  name: Rye
+                  createdAt: '2023-06-02T02:06:27.260Z'
+                  updatedAt: '2023-06-02T02:06:27.260Z'
+                - id: SkxWUkoORt
+                  soil_id: ralgK9vURr
+                  name: Semanggi
+                  createdAt: '2023-06-02T02:06:27.462Z'
+                  updatedAt: '2023-06-02T02:06:27.462Z'
+                - id: C4q-Fg61Lv
+                  soil_id: ralgK9vURr
+                  name: Alfalfa
+                  createdAt: '2023-06-02T02:06:27.662Z'
+                  updatedAt: '2023-06-02T02:06:27.662Z'
+                - id: Mh0i9u6vqn
+                  soil_id: ralgK9vURr
+                  name: Soba
+                  createdAt: '2023-06-02T02:06:27.860Z'
+                  updatedAt: '2023-06-02T02:06:27.860Z'
+                - id: V5isPGHpv3
+                  soil_id: ralgK9vURr
+                  name: Rye musim dingin
+                  createdAt: '2023-06-02T02:06:28.079Z'
+                  updatedAt: '2023-06-02T02:06:28.079Z'
+  /api/scan-histories:
+    get:
+      tags:
+      - Plant
+      summary: Scan Histories
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '173'
+            ETag:
+              schema:
+                type: string
+                example: W/"ad-6ucOpU6kYcsrdXnavV4CL2pVMCM"
+            Date:
+              schema:
+                type: string
+                example: Sun, 04 Jun 2023 10:33:18 GMT
+            Via:
+              schema:
+                type: string
+                example: 1.1 google
+            Alt-Svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 200
+                message: Success get history!
+                success: true
+                data:
+                  user_id: dUTwTcP5JF
+                  scanHistories:
+                  - soil_type: Humus
+                    date_scan: '2023-06-02T03:51:15.835Z'
+  /api/history-detail/{historyId}:
+    get:
+      tags:
+      - Plant
+      summary: History Detail
+      parameters:
+      - name: historyId
+        in: path
+        description: History ID
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '978'
+            ETag:
+              schema:
+                type: string
+                example: W/"3d2-rNwS3cX2QAFb+ggI5vDGH2uPPMY"
+            Date:
+              schema:
+                type: string
+                example: Wed, 07 Jun 2023 10:21:32 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: 200
+                message: Success get detail history
+                success: true
+                data:
+                  soil_type: Humus
+                  soil_image: >-
+                    https://storage.googleapis.com/renata-dev-soil/1685974454381-DlCyWC1H1ePSn-dW.png
+                  plant_recommendations:
+                  - Padi
+                  - Sawi
+                  - Bayam
+                  - Kangkung
+                  - Andong
+                  - Nanas
+                  - Kelapa
+                  - Tomat
+                  - Paprika
+                  - Mentimun
+                  - Zucchini
+                  - Terong
+                  - Kacang-kacangan (seperti kacang hijau atau kacang buncis)
+                  - Selada
+                  - Bayam
+                  - Kale
+                  - Kubis
+                  - Pohon apel
+                  - Pohon pir
+                  - Pohon plum
+                  - Pohon ceri
+                  - Semak-semak blueberry
+                  - Semak-semak raspberry
+                  - Tanaman stroberi
+                  - Semak-semak blackberry
+                  - Pohon ara
+                  - Wortel
+                  - Kentang
+                  - Ubi jalar
+                  - Bit
+                  - Lobak
+                  - Lobak
+                  - Bayam
+                  - Lobak Swiss
+                  - Basil
+                  - Peterseli
+                  - Ketumbar
+                  - Dill
+                  - Mint
+                  - Kacang polong
+                  - >-
+                    Kacang-kacangan (seperti kacang merah, kacang pinto, atau kacang hitam)
+                  - Lentil
+                  - Mawar
+                  - Bunga matahari
+                  - Marigold
+                  - Dahlia
+                  - Zinnias
+                  - Geranium
+                  - Gandum
+                  - Jelai
+                  - Gandum
+                  - Rye
+                  - Semanggi
+                  - Alfalfa
+                  - Soba
+                  - Rye musim dingin
+                  date_scan: '2023-06-05T14:14:15.888Z'
+  /api/predict:
+    post:
+      tags:
+      - Plant
+      summary: Growing Plants
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                plant: lettuce
+                soil: laterite
+      responses:
+        '200':
+          description: OK
+          headers:
+            Server:
+              schema:
+                type: string
+                example: Werkzeug/2.3.6 Python/3.9.16
+            Date:
+              schema:
+                type: string
+                example: Mon, 12 Jun 2023 15:43:17 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Content-Length:
+              schema:
+                type: integer
+                example: '919'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Connection:
+              schema:
+                type: string
+                example: close
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data: >
+                  To plant lettuce in laterite soil, you will need:
+
+
+                  * Lettuce seeds
+
+                  * A shovel
+
+                  * A trowel
+
+                  * Compost or manure
+
+                  * Water
+
+
+                  1. Prepare the soil by tilling it and adding compost or manure.
+
+                  2. Sow the lettuce seeds in rows, spacing them 1 inch apart.
+
+                  3. Cover the seeds with soil and water them thoroughly.
+
+                  4. Keep the soil moist until the seeds germinate.
+
+                  5. Thin the seedlings to 2 inches apart once they have grown their first true leaves.
+
+                  6. Water the lettuce regularly, especially during dry periods.
+
+                  7. Fertilize the lettuce every two weeks with a water-soluble fertilizer.
+
+                  8. Harvest the lettuce when the leaves are large enough to eat.
+
+
+                  Here are some tips for growing lettuce in laterite soil:
+
+
+                  * Choose a variety of lettuce that is suited for your climate.
+
+                  * Plant lettuce in full sun or partial shade.
+                message: Successfully Get Growing Plant Prediction
+                status: 200
+                success: true
+        '400':
+          description: BAD REQUEST
+          headers:
+            Server:
+              schema:
+                type: string
+                example: Werkzeug/2.3.6 Python/3.9.17
+            Date:
+              schema:
+                type: string
+                example: Mon, 12 Jun 2023 19:05:24 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Content-Length:
+              schema:
+                type: integer
+                example: '108'
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Via:
+              schema:
+                type: string
+                example: 1.1 google
+            Alt-Svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data: null
+                message: Bad Request, provide the right body to get the steps
+                status: 400
+                success: false
